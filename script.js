@@ -1,258 +1,344 @@
-// 1. КУРСОР
-const cursor = document.getElementById("cursor");
-if (cursor) {
-  document.body.classList.add("has-custom-cursor");
-  cursor.classList.add("active");
+(() => {
+  "use strict";
+  const EMAIL = "your@email.com"; // ← put your real email here
+  const $ = (s, r = document) => r.querySelector(s),
+    $$ = (s, r = document) => [...r.querySelectorAll(s)];
 
-  document.addEventListener("mousemove", (e) => {
-    cursor.style.left = e.clientX + "px";
-    cursor.style.top = e.clientY + "px";
-  });
-
-  const hoverElements = document.querySelectorAll(
-    "a, button, .project-card, .tool-card, .lang-card",
-  );
-  hoverElements.forEach((el) => {
-    el.addEventListener("mouseenter", () => cursor.classList.add("hover"));
-    el.addEventListener("mouseleave", () => cursor.classList.remove("hover"));
-  });
-}
-
-// 2. АНИМАЦИЯ ПРИ СКРОЛЛЕ
-const observerOptions = { root: null, rootMargin: "0px", threshold: 0.15 };
-const observer = new IntersectionObserver((entries, observer) => {
-  entries.forEach((entry) => {
-    if (entry.isIntersecting) {
-      entry.target.classList.add("active");
-      observer.unobserve(entry.target);
-    }
-  });
-}, observerOptions);
-
-document.querySelectorAll(".reveal").forEach((el) => {
-  observer.observe(el);
-});
-
-// 3. ПЕРЕВОДЫ (ОБНОВЛЕНЫ ПОД НОВЫЙ ТЕКСТ)
-const translations = {
-  en: {
-    nav_about: "About me",
-    nav_skills: "Skills",
-    nav_projects: "Projects",
-    nav_contact: "Contact",
-    hero_sub: "IM1 · 4 projects",
-    hero_title: "Junior<br>Fullstack<br>Developer",
-    btn_view: "View projects",
-    btn_contact: "Contact",
-
-    about_num: "01 / ABOUT",
-    about_title: "A little about <span>me.</span>",
-    about_intro:
-      "A curious mind, a creative approach and a passion for building things with code.",
-    about_big: "I enjoy turning ideas into digital experiences.",
-    about_1:
-      "I am an IM1 student at Hamar Katedralskole, studying Information Technology and Media Production. I am particularly interested in web development, programming and the way technology can solve everyday problems.",
-    about_2:
-      "I work with HTML, CSS, JavaScript and Python. I enjoy taking an idea from the first sketch to a working digital product. My experience includes developing websites, interactive applications, games and prototypes.",
-    about_3:
-      "I also use Figma, GitHub and VS Code in my work. I value clean code, structured documentation and problem-solving. I am always interested in learning new technologies and finding better ways to build things.",
-
-    tools_num: "02 / MY TOOLKIT",
-    tools_title: "Tools, skills <span>& technology.</span>",
-    tools_desc:
-      "The technologies and tools I use to turn ideas into working digital projects.",
-    t1_title: "Web development",
-    t1_desc:
-      "Building responsive websites and interactive interfaces with a focus on structure, functionality and user experience.",
-    t2_title: "Programming",
-    t2_desc:
+  /* ---- data ---- */
+  const SKILLS = [
+    [
+      "code",
+      "WEB DEVELOPMENT",
+      "Responsive websites and interactive interfaces, focused on structure, functionality and user experience.",
+      ["HTML", "CSS", "JavaScript"],
+    ],
+    [
+      "game",
+      "PROGRAMMING",
       "Writing code, working with logic, solving problems and creating interactive applications and games.",
-    t3_label: "AI-ASSISTED WORKFLOW",
-    t3_title: "Artificial Intelligence",
-    t3_desc:
-      "Using AI tools as part of the development process — from brainstorming and research to debugging, code explanations and improving project ideas.",
-    t3_tag1: "AI tools",
-    t3_tag2: "Prompting",
-    t3_tag3: "AI-assisted coding",
-    t3_tag4: "Research",
-    t4_title: "Design & prototyping",
-    t4_desc:
-      "Creating layouts, planning interfaces and turning concepts into visual prototypes before development.",
-    t4_tag1: "UI design",
-    t4_tag2: "Wireframes",
-    t5_title: "Development tools",
-    t5_desc:
+      ["Python", "JavaScript", "Pygame"],
+    ],
+    [
+      "design",
+      "DESIGN & PROTOTYPING",
+      "Creating layouts, planning interfaces and turning concepts into visual prototypes.",
+      ["Figma", "UI design", "Wireframes"],
+    ],
+    [
+      "branch",
+      "DEVELOPMENT TOOLS",
       "Organising projects, managing code and working with development environments.",
-    t6_title: "Documentation",
-    t6_desc:
-      "Writing structured project documentation, keeping track of the development process and explaining technical decisions.",
-    t6_tag1: "Documentation",
-    t6_tag2: "Testing",
+      ["VS Code", "GitHub", "Git"],
+    ],
+    [
+      "doc",
+      "DOCUMENTATION",
+      "Structured project documentation, testing and explaining technical decisions.",
+      ["Reports", "Testing", "Planning"],
+    ],
+    [
+      "spark",
+      "AI-ASSISTED WORKFLOW",
+      "Using AI tools for brainstorming, research, debugging and code explanations.",
+      ["AI tools", "Research", "Debugging"],
+    ],
+  ];
+  const PROJ = [
+    [
+      "code",
+      "KODEBUA",
+      "A digital service concept connecting young programmers with affordable programming help. Includes helper profiles, booking and Kodebot.",
+      "HTML / CSS / JAVASCRIPT",
+    ],
+    [
+      "game",
+      "NORDLYSJEGER",
+      "A Pygame arcade project: collect aurora particles, avoid falling ice crystals and build your score.",
+      "PYTHON / PYGAME",
+    ],
+    [
+      "spark",
+      "EKTE ELLER KI?",
+      "A podcast and awareness website about AI, school, social media and the future of work.",
+      "HTML / CSS / JAVASCRIPT",
+    ],
+    [
+      "design",
+      "BADMINTON BREAK",
+      "A school event website presenting a badminton activity, schedule and participation information.",
+      "HTML / CSS / FIGMA",
+    ],
+  ];
+  const ic = (n) => `<svg class="ic"><use href="#i-${n}"/></svg>`;
+  $("#skillgrid").innerHTML = SKILLS.map(
+    (s, i) =>
+      `<div class="card skill rv" style="--d:${(i % 3) * 0.12}s"><div class="h">${ic(s[0])}<span>${s[1]}</span></div><p style="margin:0">${s[2]}</p><div class="chips">${s[3].map((c) => `<span class="chip">${c}</span>`).join("")}</div></div>`,
+  ).join("");
+  $("#projgrid").innerHTML = PROJ.map(
+    (p, i) =>
+      `<div class="card proj rv" style="--d:${(i % 2) * 0.15}s"><div class="top">${ic(p[0])}<div><div class="lbl" style="font-size:9px">PROJECT / 0${i + 1}</div><h3>${p[1]}</h3></div></div><p>${p[2]}</p><div class="foot"><span class="lbl" style="font-size:9px">${p[3].replace(/ \/ /g, " &nbsp;/&nbsp; ")}</span><button class="open" data-p="${p[1]}">Open</button></div></div>`,
+  ).join("");
 
-    lang_kick: "// LANGUAGES",
-    lang_title: "Languages",
-    l_ru: "Russian",
-    l_uk: "Ukrainian",
-    l_no: "Norwegian",
-    l_en: "English",
-    l_native: "native",
-    l_good: "good",
-    l_mid: "intermediate",
+  /* ---- typing ---- */
+  let typed = "Developer.",
+    tIdx = 0;
+  const tEl = $("#type");
+  function typeLoop(word) {
+    clearTimeout(typeLoop.t);
+    tIdx = 0;
+    tEl.textContent = "";
+    (function step() {
+      tEl.textContent = word.slice(0, ++tIdx);
+      if (tIdx < word.length) typeLoop.t = setTimeout(step, 90);
+    })();
+  }
+  typeLoop(typed);
 
-    proj_title: "Selected projects",
-    scroll_hint: "Scroll sideways →",
-    contact_kick: "HAVE A PROJECT IN MIND?",
-    contact_title: "LET'S WORK TOGETHER.",
-    btn_contact_me: "Contact me",
-  },
-  no: {
-    nav_about: "Om meg",
-    nav_skills: "Ferdigheter",
-    nav_projects: "Prosjekter",
-    nav_contact: "Kontakt",
-    hero_sub: "IM1 · 4 prosjekter",
-    hero_title: "Junior<br>Fullstack<br>Utvikler",
-    btn_view: "Se prosjekter",
-    btn_contact: "Kontakt meg",
-
-    about_num: "01 / OM MEG",
-    about_title: "Litt om <span>meg.</span>",
-    about_intro:
+  /* ---- i18n: ВСЕ тексты страницы переводятся по этому словарю (EN → NO) ---- */
+  const NO = {
+    "JUNIOR FULLSTACK DEVELOPER": "JUNIOR FULLSTACK-UTVIKLER",
+    ABOUT: "OM MEG",
+    SKILLS: "FERDIGHETER",
+    PROJECTS: "PROSJEKTER",
+    CONTACT: "KONTAKT",
+    "EXPLORE PROJECTS ↗": "SE PROSJEKTER ↗",
+    "VIEW CV ↗": "SE CV ↗",
+    "A little about me.": "Litt om meg.",
+    "A curious mind, a creative approach and a passion for building things with code.":
       "Et nysgjerrig sinn, en kreativ tilnærming og en lidenskap for å bygge ting med kode.",
-    about_big: "Jeg liker å gjøre ideer om til digitale opplevelser.",
-    about_1:
-      "Jeg er IM1-elev ved Hamar katedralskole, hvor jeg studerer informasjonsteknologi og medieproduksjon. Jeg er spesielt interessert i webutvikling, programmering og hvordan teknologi kan løse hverdagslige problemer.",
-    about_2:
-      "Jeg jobber med HTML, CSS, JavaScript og Python. Jeg liker å ta en idé fra første skisse til et fungerende digitalt produkt. Min erfaring inkluderer utvikling av nettsider, interaktive applikasjoner, spill og prototyper.",
-    about_3:
-      "Jeg bruker også Figma, GitHub og VS Code i arbeidet mitt. Jeg verdsetter ren kode, strukturert dokumentasjon og problemløsning. Jeg er alltid interessert i å lære nye teknologier og finne bedre måter å bygge ting på.",
-
-    tools_num: "02 / MIN VERKTØYKASSE",
-    tools_title: "Verktøy, ferdigheter <span>og teknologi.</span>",
-    tools_desc:
-      "Teknologiene og verktøyene jeg bruker for å gjøre ideer om til fungerende digitale prosjekter.",
-    t1_title: "Webutvikling",
-    t1_desc:
-      "Bygge responsive nettsider og interaktive grensesnitt med fokus på struktur, funksjonalitet og brukeropplevelse.",
-    t2_title: "Programmering",
-    t2_desc:
+    "I am an IM1 student at Hamar Katedralskole, studying Information Technology and Media Production. I am particularly interested in web development, programming and the way technology can solve everyday problems.":
+      "Jeg er IM1-elev ved Hamar katedralskole og studerer Informasjonsteknologi og Medieproduksjon. Jeg er spesielt interessert i webutvikling, programmering og hvordan teknologi kan løse hverdagslige problemer.",
+    "I work with HTML, CSS, JavaScript and Python. I enjoy taking an idea from the first sketch to a working digital product. My experience includes developing websites, interactive applications, games and prototypes.":
+      "Jeg jobber med HTML, CSS, JavaScript og Python. Jeg liker å ta en idé fra første skisse til et fungerende digitalt produkt. Erfaringen min inkluderer utvikling av nettsider, interaktive applikasjoner, spill og prototyper.",
+    "I enjoy turning ideas into digital experiences.":
+      "Jeg liker å gjøre ideer om til digitale opplevelser.",
+    "Tools, skills & technology.": "Verktøy, ferdigheter og teknologi.",
+    "The technologies and tools I use to turn ideas into working digital projects.":
+      "Teknologiene og verktøyene jeg bruker for å gjøre ideer til fungerende digitale prosjekter.",
+    "WEB DEVELOPMENT": "WEBUTVIKLING",
+    PROGRAMMING: "PROGRAMMERING",
+    "DESIGN & PROTOTYPING": "DESIGN OG PROTOTYPING",
+    "DEVELOPMENT TOOLS": "UTVIKLINGSVERKTØY",
+    DOCUMENTATION: "DOKUMENTASJON",
+    "AI-ASSISTED WORKFLOW": "KI-STØTTET ARBEIDSFLYT",
+    "Responsive websites and interactive interfaces, focused on structure, functionality and user experience.":
+      "Responsive nettsider og interaktive grensesnitt med fokus på struktur, funksjonalitet og brukeropplevelse.",
+    "Writing code, working with logic, solving problems and creating interactive applications and games.":
       "Skrive kode, jobbe med logikk, løse problemer og lage interaktive applikasjoner og spill.",
-    t3_label: "AI-ASSISTERT ARBEIDSFLYT",
-    t3_title: "Kunstig intelligens",
-    t3_desc:
-      "Bruke AI-verktøy som en del av utviklingsprosessen – fra idémyldring og research til feilsøking, kodeforklaringer og forbedring av prosjektideer.",
-    t3_tag1: "AI-verktøy",
-    t3_tag2: "Prompting",
-    t3_tag3: "AI-assistert koding",
-    t3_tag4: "Research",
-    t4_title: "Design og prototyping",
-    t4_desc:
-      "Lage layout, planlegge grensesnitt og gjøre konsepter om til visuelle prototyper før utvikling.",
-    t4_tag1: "UI-design",
-    t4_tag2: "Wireframes",
-    t5_title: "Utviklingsverktøy",
-    t5_desc:
-      "Organisere prosjekter, administrere kode og jobbe med utviklingsmiljøer.",
-    t6_title: "Dokumentasjon",
-    t6_desc:
-      "Skrive strukturert prosjektdokumentasjon, holde oversikt over utviklingsprosessen og forklare tekniske beslutninger.",
-    t6_tag1: "Dokumentasjon",
-    t6_tag2: "Testing",
+    "Creating layouts, planning interfaces and turning concepts into visual prototypes.":
+      "Lage layouter, planlegge grensesnitt og gjøre konsepter om til visuelle prototyper.",
+    "Organising projects, managing code and working with development environments.":
+      "Organisere prosjekter, administrere kode og jobbe i utviklingsmiljøer.",
+    "Structured project documentation, testing and explaining technical decisions.":
+      "Strukturert prosjektdokumentasjon, testing og forklaring av tekniske valg.",
+    "Using AI tools for brainstorming, research, debugging and code explanations.":
+      "Bruke KI-verktøy til idémyldring, research, feilsøking og kodeforklaringer.",
+    "UI design": "UI-design",
+    Wireframes: "Skisser",
+    Reports: "Rapporter",
+    Planning: "Planlegging",
+    "AI tools": "KI-verktøy",
+    Debugging: "Feilsøking",
+    Languages: "Språk",
+    Russian: "Russisk",
+    Ukrainian: "Ukrainsk",
+    Norwegian: "Norsk",
+    English: "Engelsk",
+    Native: "Morsmål",
+    Intermediate: "Mellomnivå",
+    "What drives me": "Det som driver meg",
+    "The direction I want to grow in — and the qualities I bring to each project.":
+      "Retningen jeg vil vokse i – og egenskapene jeg tar med inn i hvert prosjekt.",
+    "Building things that matter.": "Å bygge ting som betyr noe.",
+    "My goal is to grow as a full-stack developer, strengthen my programming skills and build useful digital products. I want to keep learning through real projects, collaboration and practical experience.":
+      "Målet mitt er å vokse som fullstack-utvikler, styrke programmeringsferdighetene mine og bygge nyttige digitale produkter. Jeg vil fortsette å lære gjennom ekte prosjekter, samarbeid og praktisk erfaring.",
+    "WEB DEVELOPMENT · PROGRAMMING · CONTINUOUS LEARNING":
+      "WEBUTVIKLING · PROGRAMMERING · KONTINUERLIG LÆRING",
+    "Curious by nature.": "Nysgjerrig av natur.",
+    "I enjoy exploring web development, programming, game projects and interface prototyping. I like solving problems, working independently, organising my process and documenting how a project develops.":
+      "Jeg liker å utforske webutvikling, programmering, spillprosjekter og prototyping av grensesnitt. Jeg liker å løse problemer, jobbe selvstendig, organisere prosessen min og dokumentere hvordan et prosjekt utvikler seg.",
+    "CURIOSITY · PROBLEM-SOLVING · STRUCTURE":
+      "NYSGJERRIGHET · PROBLEMLØSNING · STRUKTUR",
+    "Selected projects": "Utvalgte prosjekter",
+    "A selection of things I have planned, designed and built.":
+      "Et utvalg av ting jeg har planlagt, designet og bygget.",
+    "A digital service concept connecting young programmers with affordable programming help. Includes helper profiles, booking and Kodebot.":
+      "Et digitalt tjenestekonsept som kobler unge programmerere med rimelig programmeringshjelp. Inkluderer hjelperprofiler, booking og Kodebot.",
+    "A Pygame arcade project: collect aurora particles, avoid falling ice crystals and build your score.":
+      "Et Pygame-arkadeprosjekt: samle nordlyspartikler, unngå fallende iskrystaller og bygg poengsummen din.",
+    "A podcast and awareness website about AI, school, social media and the future of work.":
+      "En podkast og informasjonsside om KI, skole, sosiale medier og fremtidens arbeidsliv.",
+    "A school event website presenting a badminton activity, schedule and participation information.":
+      "En nettside for et skolearrangement som presenterer en badmintonaktivitet, timeplan og påmeldingsinformasjon.",
+    Open: "Åpne",
+    "Have a project in mind?": "Har du et prosjekt i tankene?",
+    "Interested in collaboration, new ideas or an opportunity to learn and grow.":
+      "Interessert i samarbeid, nye ideer eller en mulighet til å lære og vokse.",
+    "LET’S CONNECT": "KONTAKT MEG",
+  };
+  let lang = "en";
+  const norm = (v) => v.replace(/\s+/g, " ").trim(),
+    orig = new Map(),
+    tn = [];
+  const walker = document.createTreeWalker(
+    document.body,
+    NodeFilter.SHOW_TEXT,
+    {
+      acceptNode: (n) =>
+        !norm(n.nodeValue) ||
+        n.parentElement.closest("script,style,#type,#lang,.toast")
+          ? NodeFilter.FILTER_SKIP
+          : NodeFilter.FILTER_ACCEPT,
+    },
+  );
+  for (let n; (n = walker.nextNode()); ) {
+    tn.push(n);
+    orig.set(n, n.nodeValue);
+  }
+  const tr = (v) => {
+    const k = norm(v);
+    return (
+      NO[k] ??
+      (/^PROJECT \/ \d+$/.test(k) ? k.replace("PROJECT", "PROSJEKT") : v)
+    );
+  };
+  $("#lang").onclick = () => {
+    lang = lang === "en" ? "no" : "en";
+    tn.forEach(
+      (n) => (n.nodeValue = lang === "no" ? tr(orig.get(n)) : orig.get(n)),
+    );
+    $("#lang").innerHTML = lang === "en" ? "<b>EN</b> / NO" : "EN / <b>NO</b>";
+    document.documentElement.lang = lang === "en" ? "en" : "nb";
+    typeLoop(lang === "en" ? "Developer." : "Utvikler.");
+  };
 
-    lang_kick: "// SPRÅK",
-    lang_title: "Språk",
-    l_ru: "Russisk",
-    l_uk: "Ukrainsk",
-    l_no: "Norsk",
-    l_en: "Engelsk",
-    l_native: "morsmål",
-    l_good: "god",
-    l_mid: "middels",
+  /* ---- reveal on scroll ---- */
+  const io = new IntersectionObserver(
+    (es) =>
+      es.forEach((e) => {
+        if (e.isIntersecting) {
+          e.target.classList.add("in");
+          io.unobserve(e.target);
+        }
+      }),
+    { threshold: 0.12 },
+  );
+  $$(".rv").forEach((e) => io.observe(e));
 
-    proj_title: "Utvalgte prosjekter",
-    scroll_hint: "Rull sidelengs →",
-    contact_kick: "HAR DU ET PROSJEKT I TANKENE?",
-    contact_title: "LA OSS JOBBE SAMMEN.",
-    btn_contact_me: "Kontakt meg",
-  },
-};
+  /* ---- scrollspy ---- */
+  const links = $$("nav a"),
+    secs = links.map((a) => $(a.getAttribute("href")));
+  const spy = new IntersectionObserver(
+    (es) =>
+      es.forEach((e) => {
+        if (e.isIntersecting)
+          links.forEach((a) =>
+            a.classList.toggle(
+              "on",
+              a.getAttribute("href") === "#" + e.target.id,
+            ),
+          );
+      }),
+    { rootMargin: "-45% 0px -50% 0px" },
+  );
+  secs.forEach((s) => s && spy.observe(s));
 
-function setLanguage(lang) {
-  currentLang = lang;
-  document.querySelectorAll("[data-i18n]").forEach((el) => {
-    const key = el.getAttribute("data-i18n");
-    if (translations[lang] && translations[lang][key]) {
-      if (
-        translations[lang][key].includes("<br>") ||
-        translations[lang][key].includes("<span>")
-      ) {
-        el.innerHTML = translations[lang][key];
-      } else {
-        el.textContent = translations[lang][key];
-      }
+  /* ---- cards: 3D tilt + spotlight ---- */
+  const fine = matchMedia("(hover:hover)").matches;
+  if (fine)
+    $$(".card:not(.end)").forEach((c) => {
+      c.addEventListener("mousemove", (e) => {
+        const r = c.getBoundingClientRect(),
+          x = (e.clientX - r.left) / r.width,
+          y = (e.clientY - r.top) / r.height;
+        c.style.setProperty("--mx", x * 100 + "%");
+        c.style.setProperty("--my", y * 100 + "%");
+        c.style.setProperty("--ry", ((x - 0.5) * 6).toFixed(2) + "deg");
+        c.style.setProperty("--rx", ((0.5 - y) * 6).toFixed(2) + "deg");
+      });
+      c.addEventListener("mouseleave", () => {
+        c.style.setProperty("--rx", "0deg");
+        c.style.setProperty("--ry", "0deg");
+      });
+    });
+
+  /* ---- cursor glow + cat eyes ---- */
+  const glow = $("#glow");
+  addEventListener("pointermove", (e) => {
+    glow.style.left = e.clientX + "px";
+    glow.style.top = e.clientY + "px";
+  });
+
+  /* ---- parallax on stickers/lace ---- */
+  let ticking = false;
+  addEventListener(
+    "scroll",
+    () => {
+      if (ticking) return;
+      ticking = true;
+      requestAnimationFrame(() => {
+        const y = scrollY;
+        $("#stage .photo").style.transform =
+          `translateY(${y * 0.12}px) scale(1.08)`;
+        $$(".lace").forEach(
+          (l, i) =>
+            (l.style.backgroundPositionY = y * 0.04 * (i % 2 ? 1 : -1) + "px"),
+        );
+        ticking = false;
+      });
+    },
+    { passive: true },
+  );
+
+  /* ---- click sparkles ---- */
+  const GL = ["🍒", "♪", "♫", "✦", "🖤", "🎀"];
+  addEventListener("click", (e) => {
+    if (e.target.closest("a,button")) return;
+    for (let i = 0; i < 7; i++) {
+      const s = document.createElement("span");
+      s.className = "spark";
+      s.textContent = GL[(Math.random() * GL.length) | 0];
+      s.style.left = e.clientX + "px";
+      s.style.top = e.clientY + "px";
+      s.style.setProperty("--dx", (Math.random() - 0.5) * 160 + "px");
+      s.style.setProperty("--dy", -40 - Math.random() * 120 + "px");
+      s.style.setProperty("--r", (Math.random() - 0.5) * 120 + "deg");
+      document.body.appendChild(s);
+      setTimeout(() => s.remove(), 1000);
     }
   });
 
-  document.querySelectorAll(".lang-btn").forEach((btn) => {
-    btn.classList.toggle("active", btn.dataset.lang === lang);
-  });
-}
-
-document.querySelectorAll(".lang-btn").forEach((btn) => {
-  btn.addEventListener("click", () => setLanguage(btn.dataset.lang));
-});
-
-// 4. ПЕРЕТАСКИВАНИЕ ПРОЕКТОВ
-const track = document.getElementById("projectsTrack");
-if (track) {
-  let isDown = false,
-    startX,
-    scrollLeft;
-  track.addEventListener("mousedown", (e) => {
-    isDown = true;
-    startX = e.pageX - track.offsetLeft;
-    scrollLeft = track.scrollLeft;
-  });
-  track.addEventListener("mouseleave", () => {
-    isDown = false;
-  });
-  track.addEventListener("mouseup", () => {
-    isDown = false;
-  });
-  track.addEventListener("mousemove", (e) => {
-    if (!isDown) return;
-    e.preventDefault();
-    const x = e.pageX - track.offsetLeft;
-    const walk = (x - startX) * 2;
-    track.scrollLeft = scrollLeft - walk;
-  });
-}
-
-// 5. CV MODAL LOGIC
-const cvDialog = document.getElementById("cvDialog");
-const openCvBtn = document.getElementById("openCvBtn");
-const closeCvBtn = document.getElementById("closeCvBtn");
-
-if (openCvBtn && cvDialog) {
-  openCvBtn.addEventListener("click", () => {
-    cvDialog.showModal();
-  });
-  closeCvBtn.addEventListener("click", () => {
-    cvDialog.close();
-  });
-  cvDialog.addEventListener("click", (e) => {
-    const dialogDimensions = cvDialog.getBoundingClientRect();
-    if (
-      e.clientX < dialogDimensions.left ||
-      e.clientX > dialogDimensions.right ||
-      e.clientY < dialogDimensions.top ||
-      e.clientY > dialogDimensions.bottom
-    ) {
-      cvDialog.close();
+  /* ---- toast, copy email, magnetic buttons ---- */
+  const toast = $("#toast");
+  let tt;
+  const say = (m) => {
+    toast.textContent = m;
+    toast.classList.add("show");
+    clearTimeout(tt);
+    tt = setTimeout(() => toast.classList.remove("show"), 2200);
+  };
+  $("#mail").onclick = async () => {
+    try {
+      await navigator.clipboard.writeText(EMAIL);
+      say((lang === "no" ? "E-post kopiert ✦ " : "Email copied ✦ ") + EMAIL);
+    } catch {
+      location.href = "mailto:" + EMAIL;
     }
-  });
-}
-
-document.addEventListener("DOMContentLoaded", () => {
-  setLanguage("en");
-});
+  };
+  $$(".open").forEach(
+    (b) =>
+      (b.onclick = () =>
+        say(
+          b.dataset.p +
+            (lang === "no" ? " — lenke kommer snart" : " — link coming soon"),
+        )),
+  );
+  if (fine)
+    $$(".btn").forEach((b) => {
+      b.addEventListener("mousemove", (e) => {
+        const r = b.getBoundingClientRect();
+        b.style.translate = `${(e.clientX - r.left - r.width / 2) * 0.15}px ${(e.clientY - r.top - r.height / 2) * 0.25 - 3}px`;
+      });
+      b.addEventListener("mouseleave", () => (b.style.translate = ""));
+    });
+})();
