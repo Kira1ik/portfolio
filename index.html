@@ -1,649 +1,367 @@
 <!doctype html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Zhanna — Web Developer Portfolio</title>
-
-    <!-- Новое подключение шрифтов (Cormorant Garamond, Manrope, JetBrains Mono) -->
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, viewport-fit=cover"
+    />
+    <title>Zhanna — Junior Fullstack Developer</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&family=Manrope:wght@400;500;600;700;800&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600&family=Inter:wght@400;500;600&display=swap"
       rel="stylesheet"
     />
-
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
-    <div class="cursor" id="cursor"></div>
+    <div class="glow" id="glow"></div>
 
-    <header class="header">
-      <div class="logo">zhanna</div>
-      <nav class="nav-center">
-        <a href="#about" data-i18n="nav_about">About me</a>
-        <a href="#skills" data-i18n="nav_skills">Skills</a>
-        <a href="#projects" data-i18n="nav_projects">Projects</a>
-      </nav>
-      <div class="nav-right">
-        <button
-          class="nav-btn"
-          id="openCvBtn"
-          style="
-            margin-right: 10px;
-            border: none;
-            background: transparent;
-            color: var(--muted);
-            cursor: pointer;
-          "
-        >
-          CV
+    <!-- ФОН: слои из Figma. Картинки задаются в CSS (см. комментарий в начале style.css) -->
+    <div class="bg">
+      <div class="bg-base"></div>
+      <div class="bg-ov"></div>
+      <div class="bg-l l1"></div>
+      <div class="bg-l l2"></div>
+      <div class="bg-l l3"></div>
+      <div class="bg-l l4"></div>
+    </div>
+
+    <svg width="0" height="0" style="position: absolute">
+      <defs>
+        <symbol id="i-code" viewBox="0 0 38 38">
+          <path d="M14 11 5 19l9 8M24 11l9 8-9 8M21 7l-4 24" />
+        </symbol>
+        <symbol id="i-game" viewBox="0 0 38 38">
+          <rect x="4" y="11" width="30" height="17" rx="8" />
+          <path d="M11 16v7M7.5 19.5h7" />
+          <circle cx="25" cy="18" r="1.4" />
+          <circle cx="29" cy="22" r="1.4" />
+        </symbol>
+        <symbol id="i-design" viewBox="0 0 38 38">
+          <path d="M6 32 8 24 26 6l6 6L14 30z" />
+          <path d="m22 10 6 6" />
+        </symbol>
+        <symbol id="i-branch" viewBox="0 0 38 38">
+          <circle cx="11" cy="9" r="3.5" />
+          <circle cx="11" cy="29" r="3.5" />
+          <circle cx="27" cy="15" r="3.5" />
+          <path d="M11 12.5v13M27 18.5c0 6-16 3-16 7" />
+        </symbol>
+        <symbol id="i-doc" viewBox="0 0 38 38">
+          <path d="M9 4h14l7 7v23H9z" />
+          <path d="M23 4v7h7M14 18h12M14 24h12M14 30h8" />
+        </symbol>
+        <symbol id="i-spark" viewBox="0 0 38 38">
+          <path
+            d="M19 4c1.5 9 4 11.500 13 15-9 3.500-11.500 6-13 15-1.500-9-4-11.500-13-15 9-3.500 11.500-6 13-15z"
+          />
+        </symbol>
+        <symbol id="i-mail" viewBox="0 0 38 38">
+          <rect x="4" y="8" width="30" height="22" rx="3" />
+          <path d="m5 10 14 11L33 10" />
+        </symbol>
+      </defs>
+    </svg>
+
+    <nav>
+      <div class="wrap in">
+        <div class="logo">ZHANNA<small>JUNIOR FULLSTACK DEVELOPER</small></div>
+        <ul>
+          <li><a href="#about">ABOUT</a></li>
+          <li><a href="#skills">SKILLS</a></li>
+          <li><a href="#projects">PROJECTS</a></li>
+          <li><a href="#contact">CONTACT</a></li>
+        </ul>
+        <button class="lang" id="lang" aria-label="Switch language">
+          <b>EN</b> / NO
         </button>
-        <a href="#contact" class="nav-btn" data-i18n="nav_contact">Contact</a>
+      </div>
+      <!-- МЕСТО: лента В НАЧАЛЕ страницы (над меню) -->
+      <div
+        class="lace"
+        style="position: absolute; left: 0; right: 0; top: -13px; z-index: 1"
+      ></div>
+    </nav>
+
+    <header class="hero">
+      <div class="wrap">
+        <div class="frame rv">
+          <div class="stage" id="stage">
+            <div class="photo">
+              <!-- МЕСТО: главное фото <img src="assets/photo.jpg" alt="Zhanna"> -->
+            </div>
+            <div class="txt">
+              <h1>
+                <span>Junior Fullstack</span
+                ><em><span id="type"></span><span class="caret"></span></em>
+              </h1>
+              <span class="pill lbl">IM1 · HAMAR KATEDRALSKOLE</span>
+              <div class="btns">
+                <a class="btn" href="#projects">EXPLORE PROJECTS ↗</a>
+                <a class="btn o" href="#">VIEW CV ↗</a>
+              </div>
+            </div>
+            <!-- МЕСТО: чёрный кот (слева внизу) -->
+            <div
+              class="deco float"
+              style="
+                left: -4px;
+                bottom: -14px;
+                width: 170px;
+                height: 177px;
+                rotate: 9deg;
+              "
+            >
+              <!-- <img src="assets/cat.png" alt=""> -->
+            </div>
+            <!-- МЕСТО: картинка справа сверху (image 5) -->
+            <div
+              class="deco float"
+              style="
+                right: -40px;
+                top: -40px;
+                width: 300px;
+                height: 300px;
+                animation-delay: -2s;
+              "
+            >
+              <!-- <img src="assets/image5.png" alt=""> -->
+            </div>
+          </div>
+        </div>
+        <div class="lace" style="margin-top: 30px"></div>
       </div>
     </header>
 
-    <!-- ГЛАВНЫЙ ЭКРАН (НОВОЕ ОФОРМЛЕНИЕ) -->
-    <section class="hero" id="home">
-      <div class="hero-overlay"></div>
-
-      <div class="hero-content">
-        <p class="hero-kicker">PORTFOLIO</p>
-
-        <h4 class="hero-name">ZHANNA</h4>
-
-        <p class="hero-sub" data-i18n="hero_sub">IM1 · 4 projects</p>
-
-        <h2 class="hero-title" data-i18n="hero_title">
-          Junior<br />Fullstack<br />Developer
-        </h2>
-
-        <div class="hero-buttons">
-          <a href="#projects" class="btn btn-light" data-i18n="btn_view"
-            >View projects</a
-          >
-          <a href="#contact" class="btn btn-outline" data-i18n="btn_contact"
-            >Contact</a
-          >
-        </div>
-      </div>
-    </section>
-
-    <!-- ABOUT ME (ФОТО СЛЕВА, ТЕКСТ СПРАВА) -->
-    <section class="about-section" id="about">
-      <div class="container">
-        <div class="about-heading reveal">
-          <span class="section-number" data-i18n="about_num">01 / ABOUT</span>
-          <h2 data-i18n="about_title">A little about <span>me.</span></h2>
-          <p class="about-intro" data-i18n="about_intro">
-            A curious mind, a creative approach and a passion for building
-            things with code.
-          </p>
-        </div>
-
-        <!-- НОВАЯ СЕТКА ДЛЯ ФОТО И ТЕКСТА -->
-        <div class="about-grid reveal">
-          <div class="about-image-wrapper">
-            <img src="about.jpg" alt="Zhanna" />
-          </div>
-          <div class="about-text">
-            <p class="highlight" data-i18n="about_big">
-              I enjoy turning ideas into digital experiences.
-            </p>
-            <p data-i18n="about_1">
-              I am an IM1 student at Hamar Katedralskole, studying Information
-              Technology and Media Production. I am particularly interested in
-              web development, programming and the way technology can solve
-              everyday problems.
-            </p>
-            <p data-i18n="about_2">
-              I work with HTML, CSS, JavaScript and Python. I enjoy taking an
-              idea from the first sketch to a working digital product. My
-              experience includes developing websites, interactive applications,
-              games and prototypes.
-            </p>
-            <p data-i18n="about_3">
-              I also use Figma, GitHub and VS Code in my work. I value clean
-              code, structured documentation and problem-solving. I am always
-              interested in learning new technologies and finding better ways to
-              build things.
-            </p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- TOOLS / SKILLS -->
-    <section class="tools-section" id="skills">
-      <div class="container">
-        <div class="tools-heading reveal">
-          <span class="section-number" data-i18n="tools_num"
-            >02 / MY TOOLKIT</span
-          >
-          <h2 data-i18n="tools_title">
-            Tools, skills <span>& technology.</span>
-          </h2>
-          <p data-i18n="tools_desc">
-            The technologies and tools I use to turn ideas into working digital
-            projects.
-          </p>
-        </div>
-
-        <div class="tools-grid reveal">
-          <div class="tool-card">
-            <span class="tool-number">01</span>
-            <h3 data-i18n="t1_title">Web development</h3>
-            <p data-i18n="t1_desc">
-              Building responsive websites and interactive interfaces with a
-              focus on structure, functionality and user experience.
-            </p>
-            <div class="tool-tags">
-              <span>HTML</span><span>CSS</span><span>JavaScript</span>
-            </div>
-          </div>
-
-          <div class="tool-card">
-            <span class="tool-number">02</span>
-            <h3 data-i18n="t2_title">Programming</h3>
-            <p data-i18n="t2_desc">
-              Writing code, working with logic, solving problems and creating
-              interactive applications and games.
-            </p>
-            <div class="tool-tags"><span>Python</span><span>Pygame</span></div>
-          </div>
-
-          <div class="tool-card ai-card">
-            <span class="tool-number">03</span>
-            <span class="ai-label" data-i18n="t3_label"
-              >AI-ASSISTED WORKFLOW</span
-            >
-            <h3 data-i18n="t3_title">Artificial Intelligence</h3>
-            <p data-i18n="t3_desc">
-              Using AI tools as part of the development process — from
-              brainstorming and research to debugging, code explanations and
-              improving project ideas.
-            </p>
-            <div class="tool-tags">
-              <span data-i18n="t3_tag1">AI tools</span>
-              <span data-i18n="t3_tag2">Prompting</span>
-              <span data-i18n="t3_tag3">AI-assisted coding</span>
-              <span data-i18n="t3_tag4">Research</span>
-            </div>
-          </div>
-
-          <div class="tool-card">
-            <span class="tool-number">04</span>
-            <h3 data-i18n="t4_title">Design & prototyping</h3>
-            <p data-i18n="t4_desc">
-              Creating layouts, planning interfaces and turning concepts into
-              visual prototypes before development.
-            </p>
-            <div class="tool-tags">
-              <span>Figma</span><span data-i18n="t4_tag1">UI design</span
-              ><span data-i18n="t4_tag2">Wireframes</span>
-            </div>
-          </div>
-
-          <div class="tool-card">
-            <span class="tool-number">05</span>
-            <h3 data-i18n="t5_title">Development tools</h3>
-            <p data-i18n="t5_desc">
-              Organising projects, managing code and working with development
-              environments.
-            </p>
-            <div class="tool-tags">
-              <span>VS Code</span><span>Git</span><span>GitHub</span
-              ><span>VirtualBox</span>
-            </div>
-          </div>
-
-          <div class="tool-card">
-            <span class="tool-number">06</span>
-            <h3 data-i18n="t6_title">Documentation</h3>
-            <p data-i18n="t6_desc">
-              Writing structured project documentation, keeping track of the
-              development process and explaining technical decisions.
-            </p>
-            <div class="tool-tags">
-              <span>Markdown</span><span data-i18n="t6_tag1">Documentation</span
-              ><span data-i18n="t6_tag2">Testing</span>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- LANGUAGES -->
-    <section class="languages sec-dark" id="languages">
-      <div class="container">
-        <p class="kick reveal" data-i18n="lang_kick">// LANGUAGES</p>
-        <h2 class="section-title reveal" data-i18n="lang_title">Languages</h2>
-
-        <div class="lang-grid reveal">
-          <div class="lang-card">
-            <div class="lang-info">
-              <h4 data-i18n="l_ru">Russian</h4>
-              <span data-i18n="l_native">native</span>
-            </div>
-            <div class="dots">
-              <u class="on"></u><u class="on"></u><u class="on"></u
-              ><u class="on"></u><u class="on"></u>
-            </div>
-          </div>
-          <div class="lang-card">
-            <div class="lang-info">
-              <h4 data-i18n="l_uk">Ukrainian</h4>
-              <span data-i18n="l_native">native</span>
-            </div>
-            <div class="dots">
-              <u class="on"></u><u class="on"></u><u class="on"></u
-              ><u class="on"></u><u class="on"></u>
-            </div>
-          </div>
-          <div class="lang-card">
-            <div class="lang-info">
-              <h4 data-i18n="l_no">Norwegian</h4>
-              <span data-i18n="l_good">good</span>
-            </div>
-            <div class="dots">
-              <u class="on"></u><u class="on"></u><u class="on"></u
-              ><u class="on"></u><u></u>
-            </div>
-          </div>
-          <div class="lang-card">
-            <div class="lang-info">
-              <h4 data-i18n="l_en">English</h4>
-              <span data-i18n="l_mid">intermediate</span>
-            </div>
-            <div class="dots">
-              <u class="on"></u><u class="on"></u><u class="on"></u><u></u
-              ><u></u>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- PROJECTS -->
-    <section class="projects sec-dark" id="projects">
-      <div class="container">
-        <div class="section-header">
-          <h2 class="section-title reveal" data-i18n="proj_title">
-            Selected projects
-          </h2>
-          <p
-            class="scroll-hint reveal"
-            data-i18n="scroll_hint"
-            style="font-family: var(--mono); color: var(--muted)"
-          >
-            Scroll sideways →
-          </p>
-        </div>
-
-        <div class="projects-track" id="projectsTrack">
-          <!-- 01 -->
-          <article class="project-card reveal">
-            <div
-              class="project-image"
-              style="background: linear-gradient(135deg, #482a41, #8e7692)"
-            >
-              <span class="project-num">01</span>
-            </div>
-            <div class="project-info">
-              <div class="project-tags">
-                <span>Web Development · Personal Project</span>
-              </div>
-              <h3 class="project-title">Kodebua</h3>
-              <p class="project-desc">
-                Kodebua is a digital platform designed to make programming help
-                more accessible to young developers. The concept connects
-                beginners with people who can help them solve coding problems,
-                understand difficult topics and improve their programming
-                skills.<br /><br />I developed the website using HTML, CSS and
-                JavaScript, created the visual prototype in Figma and
-                implemented interactive features such as a chatbot, helper
-                filtering, service selection and a booking interface.
-              </p>
-              <div class="project-tech">
-                <span>HTML</span><span>CSS</span><span>JavaScript</span
-                ><span>Figma</span><span>GitHub</span>
-              </div>
-            </div>
-            <div class="project-footer">
-              <a
-                href="https://github.com/Kira1ik/Kodebua.git"
-                target="_blank"
-                class="link project-link"
-                >GITHUB ↗</a
-              >
-              <a
-                href="YOUR_WEBSITE_LINK"
-                target="_blank"
-                class="link project-link"
-                >LIVE WEBSITE ↗</a
-              >
-            </div>
-          </article>
-
-          <!-- 02 -->
-          <article class="project-card reveal">
-            <div
-              class="project-image"
-              style="background: linear-gradient(135deg, #101e2b, #286b66)"
-            >
-              <span class="project-num">02</span>
-            </div>
-            <div class="project-info">
-              <div class="project-tags">
-                <span>Game Development · Python</span>
-              </div>
-              <h3 class="project-title">Nordlysjeger</h3>
-              <p class="project-desc">
-                Nordlysjeger is an original arcade-style game inspired by the
-                Northern Lights. The player collects glowing particles while
-                avoiding falling ice crystals. The game includes a scoring
-                system, lives, increasing difficulty and special power-ups.<br /><br />I
-                developed the game in Python using Pygame, working with game
-                mechanics, collision detection, movement, visual effects and
-                interactive elements. The project helped me explore how
-                programming logic can be used to create a complete interactive
-                experience.
-              </p>
-              <div class="project-tech">
-                <span>Python</span><span>Pygame</span><span>Game Logic</span
-                ><span>Animation</span>
-              </div>
-            </div>
-            <div class="project-footer">
-              <a
-                href="YOUR_NORDLYSJeger_GITHUB_LINK"
-                target="_blank"
-                class="link project-link"
-                >GITHUB ↗</a
-              >
-              <a
-                href="YOUR_NORDLYSJeger_WEBSITE_LINK"
-                target="_blank"
-                class="link project-link"
-                >LIVE WEBSITE ↗</a
-              >
-            </div>
-          </article>
-
-          <!-- 03 -->
-          <article class="project-card reveal">
-            <div
-              class="project-image"
-              style="background: linear-gradient(135deg, #faf4ea, #c9a4a0)"
-            >
-              <span class="project-num">03</span>
-            </div>
-            <div class="project-info">
-              <div class="project-tags">
-                <span>Web Development · Podcast</span>
-              </div>
-              <h3 class="project-title">Ekte eller KI?</h3>
-              <p class="project-desc">
-                Ekte eller KI? is a podcast and awareness project exploring
-                artificial intelligence, education and the impact of AI on young
-                people's everyday lives.<br /><br />I designed and developed my
-                own website for the project, including information sections,
-                podcast content, interactive quizzes, fact cards and source
-                references. The visual identity combines a warm editorial style
-                with interactive elements to make complex topics easier and more
-                interesting to explore.
-              </p>
-              <div class="project-tech">
-                <span>HTML</span><span>CSS</span><span>JavaScript</span
-                ><span>Responsive Design</span><span>UI Design</span>
-              </div>
-            </div>
-            <div class="project-footer">
-              <a
-                href="YOUR_EKTE_ELLER_KI_GITHUB_LINK"
-                target="_blank"
-                class="link project-link"
-                >GITHUB ↗</a
-              >
-              <a
-                href="YOUR_EKTE_ELLER_KI_WEBSITE_LINK"
-                target="_blank"
-                class="link project-link"
-                >LIVE WEBSITE ↗</a
-              >
-            </div>
-          </article>
-
-          <!-- 04 -->
-          <article class="project-card reveal">
-            <div
-              class="project-image"
-              style="background: linear-gradient(135deg, #173b30, #a7c86c)"
-            >
-              <span class="project-num">04</span>
-            </div>
-            <div class="project-info">
-              <div class="project-tags">
-                <span>Web Development · Event Website</span>
-              </div>
-              <h3 class="project-title">Badminton Break</h3>
-              <p class="project-desc">
-                Badminton Break is an event website created to present a school
-                badminton event in a clear and engaging way. The website
-                provides essential information about the event, including the
-                schedule, location, participation and activities.<br /><br />I
-                worked on the visual concept in Figma and developed the website
-                using HTML and CSS. The project focused on responsive design,
-                clear navigation and creating a consistent visual identity for a
-                real school event.
-              </p>
-              <div class="project-tech">
-                <span>HTML</span><span>CSS</span><span>Figma</span
-                ><span>Responsive Design</span>
-              </div>
-            </div>
-            <div class="project-footer">
-              <a
-                href="YOUR_BADMINTON_GITHUB_LINK"
-                target="_blank"
-                class="link project-link"
-                >GITHUB ↗</a
-              >
-              <a
-                href="YOUR_BADMINTON_WEBSITE_LINK"
-                target="_blank"
-                class="link project-link"
-                >Live Website ↗</a
-              >
-            </div>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <!-- CONTACT -->
-    <section class="contact sec-dark" id="contact">
-      <div class="container">
-        <p class="kick reveal" data-i18n="contact_kick">
-          HAVE A PROJECT IN MIND?
+    <section id="about">
+      <div class="wrap">
+        <h2 class="rv">A little about me.</h2>
+        <p class="sub rv" style="font: 500 22px var(--serif); color: var(--t)">
+          A curious mind, a creative approach and a passion for building things
+          with code.
         </p>
-        <h2 class="contact-title reveal" data-i18n="contact_title">
-          LET'S<br />WORK<br />TOGETHER.
-        </h2>
-
-        <div class="contact-grid reveal">
-          <div class="contact-card">
-            <small>EMAIL</small>
-            <a href="mailto:0960876677kla@gmail.com">0960876677kla@gmail.com</a>
+        <div class="card about rv" style="padding: 28px 24px">
+          <div class="pic">
+            <!-- МЕСТО: твоё фото <img src="assets/me.jpg" alt=""> -->
           </div>
-          <div class="contact-card">
-            <small>INSTAGRAM</small>
-            <a href="#">@elizabe_th</a>
-          </div>
-          <div class="contact-card">
-            <small>PHONE</small>
-            <a href="tel:+4792532350">+47 925 32 350</a>
-          </div>
-          <div class="contact-card">
-            <small>LOCATION</small>
-            <span>Hamar, Norway</span>
+          <p>
+            I am an IM1 student at Hamar Katedralskole, studying Information
+            Technology and Media Production. I am particularly interested in web
+            development, programming and the way technology can solve everyday
+            problems.
+          </p>
+          <p>
+            I work with HTML, CSS, JavaScript and Python. I enjoy taking an idea
+            from the first sketch to a working digital product. My experience
+            includes developing websites, interactive applications, games and
+            prototypes.
+          </p>
+          <div class="quote">
+            I enjoy turning ideas into digital experiences.
           </div>
         </div>
-
-        <a
-          href="mailto:0960876677kla@gmail.com"
-          class="btn btn-light reveal"
-          data-i18n="btn_contact_me"
-          >Contact me</a
+        <!-- МЕСТО: бантик справа сверху -->
+        <div
+          class="deco float"
+          style="
+            right: -10px;
+            top: -30px;
+            width: 210px;
+            height: 177px;
+            rotate: 9deg;
+            z-index: 6;
+          "
         >
+          <!-- <img src="assets/bow.png" alt=""> -->
+        </div>
+        <!-- МЕСТО: бантик слева внизу -->
+        <div
+          class="deco float"
+          style="
+            left: -30px;
+            bottom: -30px;
+            width: 160px;
+            height: 75px;
+            rotate: 180deg;
+            animation-delay: -3s;
+          "
+        >
+          <!-- <img src="assets/bow2.png" alt=""> -->
+        </div>
       </div>
     </section>
 
-    <div class="lang-switch">
-      <button class="lang-btn active" data-lang="en">EN</button>
-      <button class="lang-btn" data-lang="no">NO</button>
-    </div>
+    <!-- МЕСТО: лента -->
+    <div class="lace"></div>
+    <section id="skills">
+      <div class="wrap">
+        <h2 class="rv">Tools, skills &amp; technology.</h2>
+        <p class="sub rv">
+          The technologies and tools I use to turn ideas into working digital
+          projects.
+        </p>
+        <div class="g3" id="skillgrid"></div>
+        <!-- МЕСТО: вишни (справа сверху) -->
+        <div
+          class="deco float"
+          style="
+            right: -40px;
+            top: -30px;
+            width: 183px;
+            height: 162px;
+            rotate: 11deg;
+          "
+        >
+          <!-- <img src="assets/cherry.png" alt=""> -->
+        </div>
+      </div>
+    </section>
 
-    <!-- CV MODAL -->
-    <dialog id="cvDialog" class="cv-modal">
-      <div class="cv-header">
-        <div>
-          <p class="kick" style="display: block; margin-bottom: 5px">
-            CURRICULUM VITAE
+    <!-- МЕСТО: лента -->
+    <div class="lace"></div>
+    <section>
+      <div class="wrap">
+        <h2 class="rv">Languages</h2>
+        <div style="height: 30px"></div>
+        <div class="g4">
+          <div class="card lang-c rv">
+            <b>RU</b>
+            <div><span>Russian</span><i>Native</i></div>
+          </div>
+          <div class="card lang-c rv" style="--d: 0.1s">
+            <b>UA</b>
+            <div><span>Ukrainian</span><i>Native</i></div>
+          </div>
+          <div class="card lang-c rv" style="--d: 0.2s">
+            <b>NO</b>
+            <div><span>Norwegian</span><i>Intermediate</i></div>
+          </div>
+          <div class="card lang-c rv" style="--d: 0.3s">
+            <b>EN</b>
+            <div><span>English</span><i>Intermediate</i></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- МЕСТО: лента -->
+    <div class="lace"></div>
+    <section>
+      <div class="wrap">
+        <h2 class="rv" style="font-size: 46px">What drives me</h2>
+        <p class="sub rv" style="font-size: 14px">
+          The direction I want to grow in — and the qualities I bring to each
+          project.
+        </p>
+        <div class="g2">
+          <div class="card drive rv">
+            <h3>Building things that matter.</h3>
+            <p>
+              My goal is to grow as a full-stack developer, strengthen my
+              programming skills and build useful digital products. I want to
+              keep learning through real projects, collaboration and practical
+              experience.
+            </p>
+            <hr />
+            <span class="lbl"
+              >WEB DEVELOPMENT &nbsp;·&nbsp; PROGRAMMING &nbsp;·&nbsp;
+              CONTINUOUS LEARNING</span
+            >
+          </div>
+          <div class="card drive rv" style="--d: 0.15s">
+            <h3>Curious by nature.</h3>
+            <p>
+              I enjoy exploring web development, programming, game projects and
+              interface prototyping. I like solving problems, working
+              independently, organising my process and documenting how a project
+              develops.
+            </p>
+            <hr />
+            <span class="lbl"
+              >CURIOSITY &nbsp;·&nbsp; PROBLEM-SOLVING &nbsp;·&nbsp;
+              STRUCTURE</span
+            >
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- МЕСТО: лента -->
+    <div class="lace"></div>
+    <section id="projects">
+      <div class="wrap">
+        <h2 class="rv">Selected projects</h2>
+        <p class="sub rv">
+          A selection of things I have planned, designed and built.
+        </p>
+        <div class="g2" id="projgrid"></div>
+        <!-- МЕСТО: кот справа (проекты) -->
+        <div
+          class="deco float"
+          style="
+            right: -30px;
+            top: 30px;
+            width: 200px;
+            height: 242px;
+            rotate: 18deg;
+          "
+        >
+          <!-- <img src="assets/cat.png" alt=""> -->
+        </div>
+      </div>
+    </section>
+
+    <!-- МЕСТО: лента -->
+    <div class="lace"></div>
+    <section id="contact">
+      <div class="wrap">
+        <div class="card end rv" style="transform: none">
+          <h2>Have a project in mind?</h2>
+          <p class="sub" style="margin-bottom: 0">
+            Interested in collaboration, new ideas or an opportunity to learn
+            and grow.
           </p>
-          <span
+          <button class="mail" id="mail">
+            <svg class="ic"><use href="#i-mail" /></svg
+            ><span>LET’S CONNECT</span>
+          </button>
+          <div class="lbl" style="font-size: 9px">
+            ZHANNA SLIEPNOVA &nbsp;·&nbsp; PORTFOLIO 2026
+          </div>
+          <!-- МЕСТО: вишни слева сверху -->
+          <div
+            class="deco float"
             style="
-              font-family: var(--mono);
-              color: var(--muted);
-              font-size: 12px;
+              left: -38px;
+              top: -76px;
+              width: 299px;
+              height: 257px;
+              rotate: 11deg;
             "
-            >2026 / IM1</span
           >
-        </div>
-        <button id="closeCvBtn" class="nav-btn" style="border: none">✕</button>
-      </div>
-
-      <div class="cv-content">
-        <h1 class="cv-name">ZHANNA</h1>
-        <h2 class="cv-role">IT Student & Web Developer</h2>
-        <p class="cv-contact">HAMAR, NORWAY · PORTFOLIO · GITHUB</p>
-
-        <div class="cv-section">
-          <h3>Profile</h3>
-          <p>
-            An aspiring developer interested in web development, programming and
-            building functional digital products.
-          </p>
-          <p>
-            Motivated IM1 student at Hamar Katedralskole with a strong interest
-            in web development, programming and digital technologies. I have
-            practical experience developing websites, interactive applications
-            and prototypes through individual school projects. I work with HTML,
-            CSS, JavaScript and Python, and use tools such as Figma, GitHub and
-            Visual Studio Code.
-          </p>
-          <p>
-            I enjoy solving technical problems, learning new technologies and
-            turning ideas into functional digital products. I am looking for
-            opportunities to gain practical experience and continue developing
-            my skills in IT.
-          </p>
-        </div>
-
-        <div class="cv-section">
-          <h3>Education</h3>
-          <p>
-            <strong>Hamar Katedralskole</strong><br />Information Technology and
-            Media Production (IM1)<br />Norway · 2026–present
-          </p>
-          <p>
-            <em>Relevant subjects:</em> Programming and web development · IT
-            systems and technology · Media production · Digital design and
-            documentation
-          </p>
-        </div>
-
-        <div class="cv-section">
-          <h3>Selected Projects</h3>
-          <div class="cv-project">
-            <strong>01 · Kodebua — Programming Help Platform</strong>
-            <p>
-              Designed and developed a website concept for a platform offering
-              programming assistance to young developers. Created a Figma
-              prototype and implemented interactive features, including a
-              chatbot, helper filtering and a booking interface.
-            </p>
-            <small>Technologies: HTML, CSS, JavaScript, Figma, GitHub.</small>
+            <!-- <img src="assets/cherry.png" alt=""> -->
           </div>
-          <div class="cv-project">
-            <strong>02 · Nordlysjeger — Python Game</strong>
-            <p>
-              Developed an original arcade-style game using Python and Pygame.
-              Implemented player movement, collision detection, scoring, lives,
-              increasing difficulty and power-ups.
-            </p>
-            <small>Technologies: Python, Pygame.</small>
+          <!-- МЕСТО: бантик справа внизу -->
+          <div
+            class="deco float"
+            style="
+              right: -20px;
+              bottom: -22px;
+              width: 260px;
+              height: 228px;
+              rotate: 15deg;
+              animation-delay: -1.5s;
+            "
+          >
+            <!-- <img src="assets/bow.png" alt=""> -->
           </div>
-          <div class="cv-project">
-            <strong>03 · Ekte eller KI? — Podcast Website</strong>
-            <p>
-              Designed and developed a website for an educational podcast about
-              artificial intelligence and its impact on young people. Created
-              interactive quizzes, informational sections and a responsive
-              layout.
-            </p>
-            <small>Technologies: HTML, CSS, JavaScript.</small>
-          </div>
-          <div class="cv-project">
-            <strong>04 · Badminton Break — Event Website</strong>
-            <p>
-              Designed and developed a website presenting a school badminton
-              event. Worked on the visual concept, navigation, event information
-              and responsive layout.
-            </p>
-            <small>Technologies: HTML, CSS, Figma.</small>
-          </div>
-        </div>
-
-        <div class="cv-section">
-          <h3>Technical Skills</h3>
-          <p>
-            <strong>Web Development:</strong> HTML5, CSS3, JavaScript,
-            Responsive web design.
-          </p>
-          <p>
-            <strong>Programming:</strong> Python, Pygame, Basic programming
-            logic.
-          </p>
-          <p>
-            <strong>Tools:</strong> Visual Studio Code, Git and GitHub, Figma,
-            VirtualBox.
-          </p>
-          <p>
-            <strong>Other Skills:</strong> UI/UX prototyping, Technical
-            documentation, Problem-solving, Project planning, Testing and
-            debugging.
-          </p>
-        </div>
-
-        <div class="cv-section">
-          <h3>Languages</h3>
-          <p>
-            Russian — Native<br />Ukrainian — Native<br />Norwegian — Good<br />English
-            — Intermediate
-          </p>
-        </div>
-
-        <div class="cv-section">
-          <h3>Personal Strengths</h3>
-          <p>
-            Creative problem-solving · Independent learning · Attention to
-            detail · Structured working process · Interest in technology and
-            programming.
-          </p>
         </div>
       </div>
-    </dialog>
+    </section>
+    <div class="lace"></div>
+    <div class="toast" id="toast"></div>
 
     <script src="script.js"></script>
   </body>
