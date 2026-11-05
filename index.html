@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zhanna — Junior Fullstack Developer</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&family=Manrope:wght@400;500;700;800&family=Playfair+Display:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="cursor" id="cursor"></div>
+
+    <header class="header">
+        <div class="logo">zhanna</div>
+        <nav class="nav-center">
+            <a href="#about" data-i18n="nav_about">About me</a>
+            <a href="#skills" data-i18n="nav_skills">Skills</a>
+            <a href="#projects" data-i18n="nav_projects">Projects</a>
+        </nav>
+        <div class="nav-right">
+            <a href="#contact" class="nav-btn" data-i18n="nav_contact">Contact</a>
+        </div>
+    </header>
+
+    <section class="hero" id="home">
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+            <p class="hero-kicker">PORTFOLIO</p>
+            <h1 class="hero-name">ZHANNA</h1>
+            <p class="hero-sub" data-i18n="hero_sub">1st year student · 4 projects</p>
+            <h2 class="hero-title" data-i18n="hero_title">Junior<br>Fullstack<br>Developer</h2>
+            
+            <div class="hero-buttons">
+                <a href="#projects" class="btn btn-light" data-i18n="btn_view">View projects</a>
+                <a href="#contact" class="btn btn-outline" data-i18n="btn_contact">Contact</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ABOUT -->
+    <section class="about sec-dark" id="about">
+        <div class="container">
+            <p class="kick reveal" data-i18n="about_kick">// ABOUT ME</p>
+            <h2 class="section-title reveal" data-i18n="about_title">A working file, not a brochure.</h2>
+            
+            <div class="about-grid reveal">
+                <div class="about-image-wrapper">
+                    <img src="about.jpg" alt="Zhanna with camera">
+                </div>
+                <div class="about-text">
+                    <p class="highlight" data-i18n="about_big">I like understanding how things work, and then making them work better.</p>
+                    <p data-i18n="about_1">I am a 1st-year IT student at Hamar Katedralskole. My focus is fullstack development: building solid logic on the backend and clean interfaces on the frontend.</p>
+                    <p data-i18n="about_2">I care about documentation, planning and testing as much as the code itself. A project nobody can understand is not finished.</p>
+                    
+                    <div class="edu-badge">
+                        <span class="edu-dot"></span>
+                        <span data-i18n="about_edu">Vocational IT programme · Hamar Katedralskole (formerly Brumunddal Ungdomsskole)</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SKILLS (СЮДА МОЖНО ВСТАВЛЯТЬ КАРТИНКИ) -->
+    <section class="skills sec-panel" id="skills">
+        <div class="container">
+            <div class="section-header">
+                <div>
+                    <p class="kick reveal" data-i18n="skills_kick">// SKILLS</p>
+                    <h2 class="section-title reveal" data-i18n="skills_title">What I build with.</h2>
+                </div>
+            </div>
+
+            <div class="skills-layout reveal">
+                <div class="skills-sidebar" id="skillsSidebar"></div>
+                <div class="skills-content">
+                    <div class="skills-content-header">
+                        <div>
+                            <p class="kick" id="skillKick">// SKILLS / FRONTEND</p>
+                            <h3 class="skills-big-title" id="skillTitle">Frontend</h3>
+                            <p class="skills-desc" id="skillDesc">Interfaces, structure and responsive pages.</p>
+                        </div>
+                        <div class="skills-count">
+                            <small data-i18n="active_set">ACTIVE SET</small>
+                            <b id="skillCount">05</b>
+                        </div>
+                    </div>
+                    <div class="skills-grid" id="skillsGrid"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- LANGUAGES (ВЕРНУЛ ОБЫЧНЫЕ ЯЗЫКИ) -->
+    <section class="languages sec-dark" id="languages">
+        <div class="container">
+            <p class="kick reveal" data-i18n="lang_kick">// LANGUAGES</p>
+            <h2 class="section-title reveal" data-i18n="lang_title">Languages</h2>
+            
+            <div class="lang-grid reveal">
+                <div class="lang-card">
+                    <div class="lang-info">
+                        <h4 data-i18n="l_ru">Russian</h4>
+                        <span data-i18n="l_native">native</span>
+                    </div>
+                    <div class="dots"><u class="on"></u><u class="on"></u><u class="on"></u><u class="on"></u><u class="on"></u></div>
+                </div>
+                <div class="lang-card">
+                    <div class="lang-info">
+                        <h4 data-i18n="l_uk">Ukrainian</h4>
+                        <span data-i18n="l_native">native</span>
+                    </div>
+                    <div class="dots"><u class="on"></u><u class="on"></u><u class="on"></u><u class="on"></u><u class="on"></u></div>
+                </div>
+                <div class="lang-card">
+                    <div class="lang-info">
+                        <h4 data-i18n="l_no">Norwegian</h4>
+                        <span data-i18n="l_good">good</span>
+                    </div>
+                    <div class="dots"><u class="on"></u><u class="on"></u><u class="on"></u><u class="on"></u><u></u></div>
+                </div>
+                <div class="lang-card">
+                    <div class="lang-info">
+                        <h4 data-i18n="l_en">English</h4>
+                        <span data-i18n="l_mid">intermediate</span>
+                    </div>
+                    <div class="dots"><u class="on"></u><u class="on"></u><u class="on"></u><u></u><u></u></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- PROJECTS -->
+    <section class="projects sec-dark" id="projects">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title reveal" data-i18n="proj_title">Selected work</h2>
+                <p class="scroll-hint reveal" data-i18n="scroll_hint" style="font-family: var(--mono); color: var(--muted);">Scroll sideways →</p>
+            </div>
+            
+            <div class="projects-track" id="projectsTrack">
+                <article class="project-card reveal">
+                    <div class="project-image" style="background-color: #1b0c10;">
+                        <span class="project-num">01</span>
+                    </div>
+                    <div class="project-info">
+                        <div class="project-tags"><span>Mobile App</span></div>
+                        <h3 class="project-title">KantinApp</h3>
+                        <p class="project-desc">Multi-school canteen platform for students and administrators.</p>
+                        <div class="project-tech">
+                            <span>React Native</span><span>Expo</span><span>Next.js 15</span>
+                        </div>
+                    </div>
+                    <div class="project-footer">
+                        <a href="#" class="link">VIEW CASE ↗</a>
+                        <a href="#" class="link">LIVE ↗</a>
+                    </div>
+                </article>
+
+                <article class="project-card reveal">
+                    <div class="project-image" style="background-color: #241015;">
+                        <span class="project-num">02</span>
+                    </div>
+                    <div class="project-info">
+                        <div class="project-tags"><span>Event Platform</span></div>
+                        <h3 class="project-title">HamarTech</h3>
+                        <p class="project-desc">Festival management platform for HamarTech.</p>
+                        <div class="project-tech">
+                            <span>Next.js 16</span><span>React 19</span><span>TypeScript</span>
+                        </div>
+                    </div>
+                    <div class="project-footer">
+                        <a href="#" class="link">VIEW CASE ↗</a>
+                        <a href="#" class="link">LIVE ↗</a>
+                    </div>
+                </article>
+
+                <article class="project-card reveal">
+                    <div class="project-image" style="background-color: #1b0c10;">
+                        <span class="project-num">03</span>
+                    </div>
+                    <div class="project-info">
+                        <div class="project-tags"><span>Public Platform</span></div>
+                        <h3 class="project-title">Sirkulær Norge</h3>
+                        <p class="project-desc">Circular economy platform for Hamar (Norway).</p>
+                        <div class="project-tech">
+                            <span>Next.js</span><span>React</span><span>TypeScript</span>
+                        </div>
+                    </div>
+                    <div class="project-footer">
+                        <a href="#" class="link">VIEW CASE ↗</a>
+                        <a href="#" class="link">LIVE ↗</a>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section class="contact sec-dark" id="contact">
+        <div class="container">
+            <p class="kick reveal" data-i18n="contact_kick">HAVE A PROJECT IN MIND?</p>
+            <h2 class="contact-title reveal" data-i18n="contact_title">LET'S<br>WORK<br>TOGETHER.</h2>
+            
+            <div class="contact-grid reveal">
+                <div class="contact-card">
+                    <small>EMAIL</small>
+                    <a href="mailto:0960876677kla@gmail.com">0960876677kla@gmail.com</a>
+                </div>
+                <div class="contact-card">
+                    <small>INSTAGRAM</small>
+                    <a href="#">@elizabe_th</a>
+                </div>
+                <div class="contact-card">
+                    <small>PHONE</small>
+                    <a href="tel:+4792532350">+47 925 32 350</a>
+                </div>
+                <div class="contact-card">
+                    <small>LOCATION</small>
+                    <span>Hamar, Norway</span>
+                </div>
+            </div>
+            
+            <a href="mailto:0960876677kla@gmail.com" class="btn btn-light reveal" data-i18n="btn_contact_me">Contact me</a>
+        </div>
+    </section>
+
+    <div class="lang-switch">
+        <button class="lang-btn active" data-lang="en">EN</button>
+        <button class="lang-btn" data-lang="no">NO</button>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
