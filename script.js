@@ -1,13 +1,6 @@
-/* =========================================================
-   ZHANNA — PORTFOLIO 2026
-   Interactive layer + EN/NO translation
-   Vanilla JS · no dependencies
-   ========================================================= */
-
 (() => {
   "use strict";
 
-  /* ---------- helpers ---------- */
   const $ = (sel, ctx = document) => ctx.querySelector(sel);
   const $$ = (sel, ctx = document) => Array.from(ctx.querySelectorAll(sel));
   const reduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
@@ -17,9 +10,6 @@
 
   if (reduced) document.documentElement.style.scrollBehavior = "auto";
 
-  /* =========================================================
-     0 · Injected styles (keeps the markup untouched)
-     ========================================================= */
   const css = document.createElement("style");
   css.textContent = `
     /* --- entrance / reveal --- */
@@ -106,25 +96,18 @@
   `;
   document.head.appendChild(css);
 
-  /* =========================================================
-     1 · Translation dictionary (EN → NO)
-     ========================================================= */
   const I18N = {
-    /* Navigation */
     ABOUT: "OM MEG",
     SKILLS: "FERDIGHETER",
     PROJECTS: "PROSJEKTER",
     CONTACT: "KONTAKT",
 
-    /* Brand */
     "JUNIOR FULLSTACK DEVELOPER": "JUNIOR FULLSTACK-UTVIKLER",
 
-    /* Hero */
     "Developer.": "Utvikler.",
     "EXPLORE PROJECTS ↗": "UTFORSK PROSJEKTER ↗",
     "VIEW CV ↗": "SE CV ↗",
 
-    /* About */
     "A little about me.": "Litt om meg.",
     "A curious mind, a creative approach and a passion for building things with code.":
       "Et nysgjerrig sinn, en kreativ tilnærming og en lidenskap for å bygge ting med kode.",
@@ -135,7 +118,6 @@
     "I enjoy turning ideas into digital experiences.":
       "Jeg liker å gjøre ideer om til digitale opplevelser.",
 
-    /* Skills */
     "Tools, skills & technology.": "Verktøy, ferdigheter og teknologi.",
     "The technologies and tools I use to turn ideas into working digital projects.":
       "Teknologiene og verktøyene jeg bruker for å gjøre ideer om til fungerende digitale prosjekter.",
@@ -158,7 +140,6 @@
     "Using AI tools for brainstorming, research, debugging and code explanations.":
       "Bruke AI-verktøy til idémyldring, research, feilsøking og kodeforklaringer.",
 
-    /* Languages */
     Languages: "Språk",
     Russian: "Russisk",
     Native: "Morsmål",
@@ -167,7 +148,6 @@
     Intermediate: "Middels",
     English: "Engelsk",
 
-    /* Drives */
     "What drives me": "Hva som driver meg",
     "The direction I want to grow in — and the qualities I bring to each project.":
       "Retningen jeg vil vokse i — og egenskapene jeg tar med meg til hvert prosjekt.",
@@ -184,7 +164,6 @@
     "Problem-solving": "Problemløsning",
     Structure: "Struktur",
 
-    /* Projects */
     "Selected projects": "Utvalgte prosjekter",
     "A selection of things I have planned, designed and built.":
       "Et utvalg av ting jeg har planlagt, designet og bygget.",
@@ -202,16 +181,12 @@
     "A school event website presenting a badminton activity, schedule and participation information. Designed to be clear and quick to read, with a simple layout that works for both students and organisers.":
       "En nettside for et skolearrangement som presenterer en badmintonaktivitet, timeplan og informasjon om deltakelse. Designet for å være klar og rask å lese, med et enkelt oppsett som fungerer for både elever og arrangører.",
 
-    /* Contact */
     "Have a project in mind?": "Har du et prosjekt i tankene?",
     "Interested in collaboration, new ideas or an opportunity to learn and grow.":
       "Interessert i samarbeid, nye ideer eller en mulighet til å lære og vokse.",
     "LET'S CONNECT": "TA KONTAKT",
   };
 
-  /* =========================================================
-     2 · Text-node collector + translator
-     ========================================================= */
   const normalize = (s) => s.replace(/\s+/g, " ").trim();
 
   const originals = new Map();
@@ -273,7 +248,6 @@
 
     renderPill(lang);
 
-    /* tiny fade to signal the switch */
     document.body.classList.remove("lang-switching");
     void document.body.offsetWidth;
     document.body.classList.add("lang-switching");
@@ -281,13 +255,9 @@
     try {
       localStorage.setItem("zhanna-lang", lang);
     } catch {
-      /* ignore (private mode etc.) */
     }
   };
 
-  /* =========================================================
-     3 · Language switcher pill
-     ========================================================= */
   const pill = $(".pill");
 
   const renderPill = (lang) => {
@@ -316,7 +286,6 @@
         applyLanguage(target);
         return;
       }
-      /* click on empty part of pill → toggle */
       const next = currentLang === "en" ? "no" : "en";
       currentLang = next;
       applyLanguage(next);
@@ -332,9 +301,6 @@
     });
   }
 
-  /* =========================================================
-     4 · Initial language resolution
-     ========================================================= */
   collectText();
 
   let savedLang = null;
@@ -357,9 +323,6 @@
   currentLang = initialLang;
   applyLanguage(initialLang);
 
-  /* =========================================================
-     5 · Mobile navigation
-     ========================================================= */
   const nav = $("#nav");
   const burger = $("#bt");
 
@@ -390,9 +353,6 @@
     if (e.key === "Escape") setNav(false);
   });
 
-  /* =========================================================
-     6 · Smooth anchor scrolling (+ neutralise href="#")
-     ========================================================= */
   $$('a[href^="#"]').forEach((a) => {
     a.addEventListener("click", (e) => {
       const href = a.getAttribute("href");
@@ -414,9 +374,6 @@
     });
   });
 
-  /* =========================================================
-     7 · Active section highlighting in the nav
-     ========================================================= */
   const links = nav ? $$("a", nav) : [];
 
   const sectionKey = {
@@ -444,9 +401,6 @@
 
   $$("main section[id]").forEach((s) => spy.observe(s));
 
-  /* =========================================================
-     8 · Scroll reveal — cards, headings, dividers
-     ========================================================= */
   if (!reduced) {
     const revealTargets = $$(
       ["section h2.g", "section .sub", ".card", ".lace", ".ft"].join(","),
@@ -476,7 +430,6 @@
     revealTargets.forEach((el) => revealIO.observe(el));
   }
 
-  /* ---------- hero entrance (staggered, on load) ---------- */
   const heroBits = [
     $(".hin h1 .a1"),
     $(".hin h1 .a2"),
@@ -497,9 +450,6 @@
     );
   }
 
-  /* =========================================================
-     9 · Scroll loop — header state, progress bar, parallax
-     ========================================================= */
   const header = $("header");
 
   const progress = document.createElement("div");
@@ -568,9 +518,6 @@
   measure();
   render();
 
-  /* =========================================================
-     10 · Magnetic buttons (pointer devices only)
-     ========================================================= */
   if (canHover && !reduced) {
     const pull = 6;
 
@@ -592,9 +539,6 @@
     });
   }
 
-  /* =========================================================
-     11 · Performance niceties
-     ========================================================= */
   $$("img").forEach((img) => {
     img.decoding = "async";
     if (!img.closest(".hc")) img.loading = "lazy";
