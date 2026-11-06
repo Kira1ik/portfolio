@@ -1,5 +1,4 @@
 <!doctype html>
-<!doctype html>
 
 <html lang="en">
   <head>
@@ -113,14 +112,20 @@
     <header>
       <div class="hd">
         <a class="brand" href="index.html"
-          ><b>Z H A N N A</b><small>JUNIOR FULLSTACK DEVELOPER</small></a
+          ><b>Z H A N N A</b
+          ><small data-no="JUNIOR FULLSTACK-UTVIKLER"
+            >JUNIOR FULLSTACK DEVELOPER</small
+          ></a
         >
         <nav id="nav">
-          <a href="index.html">HOME</a><a href="about.html">ABOUT ME</a
-          ><a class="on" href="skills.html">SKILLS</a
-          ><a href="projects.html">PROJECTS</a
-          ><a href="ambitions.html">AMBITIONS</a
-          ><a href="application.html">APPLICATION &amp; CV</a>
+          <a data-no="HJEM" href="index.html">HOME</a
+          ><a data-no="OM MEG" href="about.html">ABOUT ME</a
+          ><a class="on" data-no="FERDIGHETER" href="skills.html">SKILLS</a
+          ><a data-no="PROSJEKTER" href="projects.html">PROJECTS</a
+          ><a data-no="AMBISJONER" href="ambitions.html">AMBITIONS</a
+          ><a data-no="SØKNAD OG CV" href="application.html"
+            >APPLICATION &amp; CV</a
+          >
         </nav>
         <div class="right">
           <span class="pill">EN / NO</span
@@ -129,7 +134,7 @@
             class="cbtn"
             href="mailto:zhasli09@innlandetfylke.no"
             ><svg class="ic"><use href="#i-mail"></use></svg
-            ><span>CONTACT</span></a
+            ><span data-no="KONTAKT">CONTACT</span></a
           ><button aria-expanded="false" aria-label="Menu" id="bt">
             <i></i><i></i><i></i>
           </button>
@@ -140,19 +145,26 @@
       <div class="view active" data-view="ferdigheter">
         <section id="skills">
           <div class="wrap">
-            <h2 class="g">Tools, skills &amp; technology.</h2>
-            <p class="sub in">
+            <h2 class="g" data-no="Verktøy, ferdigheter og teknologi.">
+              Tools, skills &amp; technology.
+            </h2>
+            <p
+              class="sub in"
+              data-no="Teknologiene og verktøyene jeg bruker for å gjøre ideer om til fungerende digitale prosjekter."
+            >
               The technologies and tools I use to turn ideas into working
               digital projects.
             </p>
             <div class="grid3">
-              <img alt="" class="d cherry1" data-i="cherry.png" />
+              <img alt="" class="d cherry1" src="images/cherry.png" />
               <article class="card sk">
                 <div class="sh">
                   <svg class="ic"><use href="#i-code"></use></svg>
-                  <h3>WEB DEVELOPMENT</h3>
+                  <h3 data-no="WEBUTVIKLING">WEB DEVELOPMENT</h3>
                 </div>
-                <p>
+                <p
+                  data-no="Responsive nettsider og interaktive grensesnitt, med fokus på struktur, funksjonalitet og brukeropplevelse."
+                >
                   Responsive websites and interactive interfaces, focused on
                   structure, functionality and user experience.
                 </p>
@@ -163,9 +175,11 @@
               <article class="card sk">
                 <div class="sh">
                   <svg class="ic"><use href="#i-game"></use></svg>
-                  <h3>PROGRAMMING</h3>
+                  <h3 data-no="PROGRAMMERING">PROGRAMMING</h3>
                 </div>
-                <p>
+                <p
+                  data-no="Skrive kode, jobbe med logikk, løse problemer og lage interaktive applikasjoner og spill."
+                >
                   Writing code, working with logic, solving problems and
                   creating interactive applications and games.
                 </p>
@@ -176,9 +190,13 @@
               <article class="card sk">
                 <div class="sh">
                   <svg class="ic"><use href="#i-design"></use></svg>
-                  <h3>DESIGN &amp; PROTOTYPING</h3>
+                  <h3 data-no="DESIGN OG PROTOTYPING">
+                    DESIGN &amp; PROTOTYPING
+                  </h3>
                 </div>
-                <p>
+                <p
+                  data-no="Lage layout, planlegge grensesnitt og gjøre konsepter om til visuelle prototyper."
+                >
                   Creating layouts, planning interfaces and turning concepts
                   into visual prototypes.
                 </p>
@@ -188,12 +206,14 @@
                 </div>
               </article>
               <article class="card sk">
-                <img alt="" class="d bow3" data-i="bow.png" />
+                <img alt="" class="d bow3" src="images/bow.png" />
                 <div class="sh">
                   <svg class="ic"><use href="#i-branch"></use></svg>
-                  <h3>DEVELOPMENT TOOLS</h3>
+                  <h3 data-no="UTVIKLINGSVERKTØY">DEVELOPMENT TOOLS</h3>
                 </div>
-                <p>
+                <p
+                  data-no="Organisere prosjekter, administrere kode og jobbe med utviklingsmiljøer."
+                >
                   Organising projects, managing code and working with
                   development environments.
                 </p>
@@ -204,9 +224,11 @@
               <article class="card sk">
                 <div class="sh">
                   <svg class="ic"><use href="#i-doc"></use></svg>
-                  <h3>DOCUMENTATION</h3>
+                  <h3 data-no="DOKUMENTASJON">DOCUMENTATION</h3>
                 </div>
-                <p>
+                <p
+                  data-no="Strukturert prosjektdokumentasjon, testing og forklaring av tekniske beslutninger."
+                >
                   Structured project documentation, testing and explaining
                   technical decisions.
                 </p>
@@ -217,86 +239,102 @@
               <article class="card sk">
                 <div class="sh">
                   <svg class="ic"><use href="#i-sparkle"></use></svg>
-                  <h3>AI-ASSISTED WORKFLOW</h3>
+                  <h3 data-no="AI-ASSISTERT ARBEIDSFLYT">
+                    AI-ASSISTED WORKFLOW
+                  </h3>
                 </div>
-                <p>
+                <p
+                  data-no="Bruke AI-verktøy til idémyldring, research, feilsøking og kodeforklaringer."
+                >
                   Using AI tools for brainstorming, research, debugging and code
                   explanations.
                 </p>
                 <div class="chips">
-                  <span>AI tools</span><span>Research</span
-                  ><span>Debugging</span>
+                  <span data-no="KI-verktøy">AI tools</span><span>Research</span
+                  ><span data-no="Feilsøking">Debugging</span>
                 </div>
               </article>
             </div>
           </div>
         </section>
-        <img alt="" class="lace" data-i="lace.webp" />
+        <img alt="" class="lace" src="images/lace.webp" />
         <div class="dam">
           <section id="levels">
             <div class="wrap">
-              <h2 class="g">Skill levels</h2>
-              <p class="sub in">An honest overview of where I am today.</p>
+              <h2 class="g" data-no="Ferdighetsnivå">Skill levels</h2>
+              <p
+                class="sub in"
+                data-no="En ærlig oversikt over hvor jeg er i dag."
+              >
+                An honest overview of where I am today.
+              </p>
               <div class="card lv">
                 <div class="mt">
-                  <span>HTML</span><i style="--w: 90%"></i><em>Solid</em>
+                  <span>HTML</span><i style="--w: 90%"></i
+                  ><em data-no="Solid">Solid</em>
                 </div>
                 <div class="mt">
-                  <span>CSS</span><i style="--w: 90%"></i><em>Solid</em>
+                  <span>CSS</span><i style="--w: 90%"></i
+                  ><em data-no="Solid">Solid</em>
                 </div>
                 <div class="mt">
-                  <span>VS Code</span><i style="--w: 90%"></i><em>Solid</em>
+                  <span>VS Code</span><i style="--w: 90%"></i
+                  ><em data-no="Solid">Solid</em>
                 </div>
                 <div class="mt">
-                  <span>JavaScript</span><i style="--w: 75%"></i><em>Good</em>
+                  <span>JavaScript</span><i style="--w: 75%"></i
+                  ><em data-no="God">Good</em>
                 </div>
                 <div class="mt">
-                  <span>Python</span><i style="--w: 75%"></i><em>Good</em>
+                  <span>Python</span><i style="--w: 75%"></i
+                  ><em data-no="God">Good</em>
                 </div>
                 <div class="mt">
-                  <span>Pygame</span><i style="--w: 75%"></i><em>Good</em>
+                  <span>Pygame</span><i style="--w: 75%"></i
+                  ><em data-no="God">Good</em>
                 </div>
                 <div class="mt">
                   <span>Git &amp; GitHub</span><i style="--w: 75%"></i
-                  ><em>Good</em>
+                  ><em data-no="God">Good</em>
                 </div>
                 <div class="mt">
-                  <span>Figma</span><i style="--w: 75%"></i><em>Good</em>
+                  <span>Figma</span><i style="--w: 75%"></i
+                  ><em data-no="God">Good</em>
                 </div>
               </div>
             </div>
           </section>
-          <img alt="" class="lace" data-i="lace.webp" />
+          <img alt="" class="lace" src="images/lace.webp" />
           <section id="languages">
             <div class="wrap">
-              <h2 class="g">Languages</h2>
+              <h2 class="g" data-no="Språk">Languages</h2>
               <div class="grid4">
                 <div class="card lg">
                   <b class="g">RU</b>
                   <div>
-                    <h3>Russian</h3>
-                    <p>Native</p>
+                    <h3 data-no="Russisk">Russian</h3>
+                    <p data-no="Morsmål">Native</p>
                   </div>
                 </div>
                 <div class="card lg">
                   <b class="g">UA</b>
                   <div>
-                    <h3>Ukrainian</h3>
-                    <p>Native</p>
+                    <h3 data-no="Ukrainsk">Ukrainian</h3>
+                    <p data-no="Morsmål">Native</p>
                   </div>
                 </div>
                 <div class="card lg">
                   <b class="g">NO</b>
                   <div>
-                    <h3>Norwegian</h3>
-                    <p>Intermediate</p>
+                    <h3 data-no="Norsk">Norwegian</h3>
+                    <p data-no="Middels">Intermediate</p>
                   </div>
                 </div>
                 <div class="card lg">
                   <b class="g">EN</b>
                   <div>
-                    <h3>English</h3>
-                    <p>Intermediate</p>
+                    <h3 data-no="Engelsk">English</h3>
+                    <p data-no="Middels">Intermediate</p>
                   </div>
                 </div>
               </div>
@@ -305,7 +343,7 @@
         </div>
       </div>
     </main>
-    <script defer="" src="js/images.js"></script>
-    <script defer="" src="js/app.js"></script>
+
+    <script defer src="js/app.js"></script>
   </body>
 </html>

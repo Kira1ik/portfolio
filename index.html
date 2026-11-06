@@ -1,5 +1,4 @@
 <!doctype html>
-<!doctype html>
 
 <html lang="en">
   <head>
@@ -113,14 +112,20 @@
     <header>
       <div class="hd">
         <a class="brand" href="index.html"
-          ><b>Z H A N N A</b><small>JUNIOR FULLSTACK DEVELOPER</small></a
+          ><b>Z H A N N A</b
+          ><small data-no="JUNIOR FULLSTACK-UTVIKLER"
+            >JUNIOR FULLSTACK DEVELOPER</small
+          ></a
         >
         <nav id="nav">
-          <a class="on" href="index.html">HOME</a
-          ><a href="about.html">ABOUT ME</a><a href="skills.html">SKILLS</a
-          ><a href="projects.html">PROJECTS</a
-          ><a href="ambitions.html">AMBITIONS</a
-          ><a href="application.html">APPLICATION &amp; CV</a>
+          <a class="on" data-no="HJEM" href="index.html">HOME</a
+          ><a data-no="OM MEG" href="about.html">ABOUT ME</a
+          ><a data-no="FERDIGHETER" href="skills.html">SKILLS</a
+          ><a data-no="PROSJEKTER" href="projects.html">PROJECTS</a
+          ><a data-no="AMBISJONER" href="ambitions.html">AMBITIONS</a
+          ><a data-no="SØKNAD OG CV" href="application.html"
+            >APPLICATION &amp; CV</a
+          >
         </nav>
         <div class="right">
           <span class="pill">EN / NO</span
@@ -129,7 +134,7 @@
             class="cbtn"
             href="mailto:zhasli09@innlandetfylke.no"
             ><svg class="ic"><use href="#i-mail"></use></svg
-            ><span>CONTACT</span></a
+            ><span data-no="KONTAKT">CONTACT</span></a
           ><button aria-expanded="false" aria-label="Menu" id="bt">
             <i></i><i></i><i></i>
           </button>
@@ -143,65 +148,90 @@
             <div class="hin">
               <h1>
                 <span class="a1">Junior Fullstack</span
-                ><span class="a2">Developer.</span>
+                ><span class="a2" data-no="Utvikler.">Developer.</span>
               </h1>
               <span class="chip">IM1 · HAMAR KATEDRALSKOLE</span>
               <div class="btns">
-                <a class="btn" href="#prosjekter">EXPLORE PROJECTS ↗</a
-                ><a class="btn ghost" href="#soknad">VIEW CV ↗</a>
+                <a
+                  class="btn"
+                  data-no="UTFORSK PROSJEKTER ↗"
+                  href="projects.html"
+                  >EXPLORE PROJECTS ↗</a
+                ><a class="btn ghost" data-no="SE CV ↗" href="application.html"
+                  >VIEW CV ↗</a
+                >
               </div>
             </div>
-            <img alt="" class="d swirl" data-i="swirl.png" /><img
+            <img alt="" class="d swirl" src="images/swirl.png" /><img
               alt=""
               class="d cat1"
-              data-i="cat.png"
+              src="images/cat.png"
             />
           </div>
         </section>
-        <img alt="" class="lace" data-i="lace.webp" />
+        <img alt="" class="lace" src="images/lace.webp" />
         <div class="dam">
           <section id="explore">
             <div class="wrap">
-              <h2 class="g">Explore the portfolio.</h2>
-              <p class="sub in">
+              <h2 class="g" data-no="Utforsk portfolioen.">
+                Explore the portfolio.
+              </h2>
+              <p
+                class="sub in"
+                data-no="Seks innganger — velg siden som passer det du vil vite."
+              >
                 Six ways in — pick the page that matches what you want to know.
               </p>
               <div class="grid3">
-                <a class="card sk tz" href="#om-meg"
+                <a class="card sk tz" href="about.html"
                   ><div class="sh">
                     <svg class="ic"><use href="#i-user"></use></svg>
-                    <h3>ABOUT ME</h3>
+                    <h3 data-no="OM MEG">ABOUT ME</h3>
                   </div>
-                  <p>Who I am, where I study and what I care about.</p>
-                  <span class="go">OPEN →</span></a
-                ><a class="card sk tz" href="#ferdigheter"
+                  <p
+                    data-no="Hvem jeg er, hvor jeg studerer og hva jeg brenner for."
+                  >
+                    Who I am, where I study and what I care about.
+                  </p>
+                  <span class="go" data-no="ÅPNE →">OPEN →</span></a
+                ><a class="card sk tz" href="skills.html"
                   ><div class="sh">
                     <svg class="ic"><use href="#i-code"></use></svg>
-                    <h3>SKILLS &amp; LEVELS</h3>
+                    <h3 data-no="FERDIGHETER OG NIVÅ">SKILLS &amp; LEVELS</h3>
                   </div>
-                  <p>Tools, technologies, skill levels and languages.</p>
-                  <span class="go">OPEN →</span></a
-                ><a class="card sk tz" href="#prosjekter"
+                  <p data-no="Verktøy, teknologier, ferdighetsnivå og språk.">
+                    Tools, technologies, skill levels and languages.
+                  </p>
+                  <span class="go" data-no="ÅPNE →">OPEN →</span></a
+                ><a class="card sk tz" href="projects.html"
                   ><div class="sh">
                     <svg class="ic"><use href="#i-design"></use></svg>
-                    <h3>PROJECTS</h3>
+                    <h3 data-no="PROSJEKTER">PROJECTS</h3>
                   </div>
-                  <p>Four projects, from first sketch to working product.</p>
-                  <span class="go">OPEN →</span></a
-                ><a class="card sk tz" href="#ambisjoner"
+                  <p
+                    data-no="Fire prosjekter, fra første skisse til fungerende produkt."
+                  >
+                    Four projects, from first sketch to working product.
+                  </p>
+                  <span class="go" data-no="ÅPNE →">OPEN →</span></a
+                ><a class="card sk tz" href="ambitions.html"
                   ><div class="sh">
                     <svg class="ic"><use href="#i-rocket"></use></svg>
-                    <h3>AMBITIONS</h3>
+                    <h3 data-no="AMBISJONER">AMBITIONS</h3>
                   </div>
-                  <p>Where I am heading as a full-stack developer.</p>
-                  <span class="go">OPEN →</span></a
-                ><a class="card sk tz" href="#soknad"
+                  <p data-no="Hvor jeg er på vei som fullstack-utvikler.">
+                    Where I am heading as a full-stack developer.
+                  </p>
+                  <span class="go" data-no="ÅPNE →">OPEN →</span></a
+                ><a class="card sk tz" href="application.html"
                   ><div class="sh">
                     <svg class="ic"><use href="#i-doc"></use></svg>
-                    <h3>APPLICATION &amp; CV</h3>
+                    <h3 data-no="SØKNAD OG CV">APPLICATION &amp; CV</h3>
                   </div>
-                  <p>My application letter and CV, ready to read.</p>
-                  <span class="go">OPEN →</span></a
+                  <p data-no="Søknaden og CV-en min, klare til å leses.">
+                    My application letter and CV, ready to read.
+                  </p>
+                  <span class="go" data-no="ÅPNE →">OPEN →</span></a
                 ><a
                   class="card sk tz"
                   href="https://github.com/Kira1ik"
@@ -209,47 +239,55 @@
                   target="_blank"
                   ><div class="sh">
                     <svg class="ic"><use href="#i-gh"></use></svg>
-                    <h3>GITHUB</h3>
+                    <h3 data-no="GITHUB">GITHUB</h3>
                   </div>
-                  <p>All my code lives in public repositories.</p>
-                  <span class="go">OPEN ↗</span></a
+                  <p data-no="All koden min ligger i åpne repositorier.">
+                    All my code lives in public repositories.
+                  </p>
+                  <span class="go" data-no="ÅPNE ↗">OPEN ↗</span></a
                 >
               </div>
             </div>
           </section>
         </div>
-        <img alt="" class="lace" data-i="lace.webp" />
+        <img alt="" class="lace" src="images/lace.webp" />
         <section class="contact">
           <div class="wrap">
             <div class="ft">
               <div class="fin">
-                <h2 class="g">Have a project in mind?</h2>
-                <p class="sub in">
+                <h2 class="g" data-no="Har du et prosjekt i tankene?">
+                  Have a project in mind?
+                </h2>
+                <p
+                  class="sub in"
+                  data-no="Interessert i samarbeid, nye ideer eller en mulighet til å lære og vokse."
+                >
                   Interested in collaboration, new ideas or an opportunity to
                   learn and grow.
                 </p>
                 <a class="btn mail" href="mailto:zhasli09@innlandetfylke.no"
-                  ><svg class="ic"><use href="#i-mail"></use></svg> LET'S
-                  CONNECT</a
+                  ><svg class="ic"><use href="#i-mail"></use></svg>
+                  <span data-no="TA KONTAKT">LET'S CONNECT</span></a
                 ><a
                   class="btn ghost gbtn"
                   href="https://github.com/Kira1ik/portfolio"
                   rel="noopener"
                   target="_blank"
-                  ><svg class="gh"><use href="#i-gh"></use></svg> GITHUB</a
+                  ><svg class="gh"><use href="#i-gh"></use></svg>
+                  <span data-no="GITHUB">GITHUB</span></a
                 ><small>ZHANNA SLIEPNOVA · PORTFOLIO 2026</small>
               </div>
-              <img alt="" class="d cherry2" data-i="cherry.png" /><img
+              <img alt="" class="d cherry2" src="images/cherry.png" /><img
                 alt=""
                 class="d bow2"
-                data-i="bow.png"
+                src="images/bow.png"
               />
             </div>
           </div>
         </section>
       </div>
     </main>
-    <script defer="" src="js/images.js"></script>
-    <script defer="" src="js/app.js"></script>
+
+    <script defer src="js/app.js"></script>
   </body>
 </html>

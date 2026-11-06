@@ -1,5 +1,4 @@
 <!doctype html>
-<!doctype html>
 
 <html lang="en">
   <head>
@@ -113,14 +112,20 @@
     <header>
       <div class="hd">
         <a class="brand" href="index.html"
-          ><b>Z H A N N A</b><small>JUNIOR FULLSTACK DEVELOPER</small></a
+          ><b>Z H A N N A</b
+          ><small data-no="JUNIOR FULLSTACK-UTVIKLER"
+            >JUNIOR FULLSTACK DEVELOPER</small
+          ></a
         >
         <nav id="nav">
-          <a href="index.html">HOME</a><a href="about.html">ABOUT ME</a
-          ><a href="skills.html">SKILLS</a
-          ><a class="on" href="projects.html">PROJECTS</a
-          ><a href="ambitions.html">AMBITIONS</a
-          ><a href="application.html">APPLICATION &amp; CV</a>
+          <a data-no="HJEM" href="index.html">HOME</a
+          ><a data-no="OM MEG" href="about.html">ABOUT ME</a
+          ><a data-no="FERDIGHETER" href="skills.html">SKILLS</a
+          ><a class="on" data-no="PROSJEKTER" href="projects.html">PROJECTS</a
+          ><a data-no="AMBISJONER" href="ambitions.html">AMBITIONS</a
+          ><a data-no="SØKNAD OG CV" href="application.html"
+            >APPLICATION &amp; CV</a
+          >
         </nav>
         <div class="right">
           <span class="pill">EN / NO</span
@@ -129,7 +134,7 @@
             class="cbtn"
             href="mailto:zhasli09@innlandetfylke.no"
             ><svg class="ic"><use href="#i-mail"></use></svg
-            ><span>CONTACT</span></a
+            ><span data-no="KONTAKT">CONTACT</span></a
           ><button aria-expanded="false" aria-label="Menu" id="bt">
             <i></i><i></i><i></i>
           </button>
@@ -140,8 +145,11 @@
       <div class="view active" data-view="prosjekter">
         <section id="projects">
           <div class="wrap">
-            <h2 class="g">Selected projects</h2>
-            <p class="sub in">
+            <h2 class="g" data-no="Utvalgte prosjekter">Selected projects</h2>
+            <p
+              class="sub in"
+              data-no="Et utvalg av ting jeg har planlagt, designet og bygget."
+            >
               A selection of things I have planned, designed and built.
             </p>
             <div class="grid2">
@@ -149,11 +157,13 @@
                 <div class="ph">
                   <svg class="ic big"><use href="#i-code"></use></svg>
                   <div>
-                    <small>PROJECT / 01</small>
+                    <small data-no="PROSJEKT / 01">PROJECT / 01</small>
                     <h3 class="g">KODEBUA</h3>
                   </div>
                 </div>
-                <p>
+                <p
+                  data-no="Et digitalt tjenestekonsept som kobler unge programmerere med rimelig programmeringshjelp. Inkluderer hjelperprofiler, enkel booking av økter og Kodebot, en innebygd assistent som svarer på raske spørsmål. Grensesnittet ble prototypet i Figma og bygget med HTML, CSS og JavaScript."
+                >
                   A digital service concept that connects young programmers with
                   affordable programming help. Includes helper profiles, easy
                   session booking and Kodebot, a built-in assistant that answers
@@ -167,6 +177,7 @@
                 <div class="acts">
                   <a
                     class="btn sm"
+                    data-no="Åpne ↗"
                     href="https://lovely-kelpie-d1efc6.netlify.app"
                     rel="noopener"
                     target="_blank"
@@ -181,15 +192,17 @@
                 </div>
               </article>
               <article class="card pj">
-                <img alt="" class="d cat2" data-i="cat.png" />
+                <img alt="" class="d cat2" src="images/cat.png" />
                 <div class="ph">
                   <svg class="ic big"><use href="#i-game"></use></svg>
                   <div>
-                    <small>PROJECT / 02</small>
+                    <small data-no="PROSJEKT / 02">PROJECT / 02</small>
                     <h3 class="g">NORDLYSJEGER</h3>
                   </div>
                 </div>
-                <p>
+                <p
+                  data-no="Et Pygame-arkadeprosjekt: samle nordlys-partikler, unngå fallende iskrystaller og bygg poengsummen din. Spillet fokuserer på raske reaksjoner, enkle kontroller og en rolig nordlysatmosfære, og det er skrevet i Python."
+                >
                   A Pygame arcade project: collect aurora particles, avoid
                   falling ice crystals and build your score. The game focuses on
                   fast reactions, simple controls and a calm northern-lights
@@ -210,11 +223,13 @@
                 <div class="ph">
                   <svg class="ic big"><use href="#i-sparkle"></use></svg>
                   <div>
-                    <small>PROJECT / 03</small>
+                    <small data-no="PROSJEKT / 03">PROJECT / 03</small>
                     <h3 class="g">EKTE ELLER KI?</h3>
                   </div>
                 </div>
-                <p>
+                <p
+                  data-no="En podcast- og bevisstgjøringsside om KI, skole, sosiale medier og fremtidens arbeidsliv. Den presenterer episoder og temaer i en klar struktur og oppfordrer besøkende til å stille spørsmål ved hva som er ekte og hva som er generert."
+                >
                   A podcast and awareness website about AI, school, social media
                   and the future of work. It presents episodes and topics in a
                   clear structure and encourages visitors to question what is
@@ -226,6 +241,7 @@
                 <div class="acts">
                   <a
                     class="btn sm"
+                    data-no="Åpne ↗"
                     href="https://heroic-tarsier-724531.netlify.app"
                     rel="noopener"
                     target="_blank"
@@ -243,11 +259,13 @@
                 <div class="ph">
                   <svg class="ic big"><use href="#i-design"></use></svg>
                   <div>
-                    <small>PROJECT / 04</small>
+                    <small data-no="PROSJEKT / 04">PROJECT / 04</small>
                     <h3 class="g">BADMINTON BREAK</h3>
                   </div>
                 </div>
-                <p>
+                <p
+                  data-no="En nettside for et skolearrangement som presenterer en badmintonaktivitet, timeplan og informasjon om deltakelse. Designet for å være klar og rask å lese, med et enkelt oppsett som fungerer for både elever og arrangører."
+                >
                   A school event website presenting a badminton activity,
                   schedule and participation information. Designed to be clear
                   and quick to read, with a simple layout that works for both
@@ -259,6 +277,7 @@
                 <div class="acts">
                   <a
                     class="btn sm"
+                    data-no="Åpne ↗"
                     href="https://glittering-semolina-d848a1.netlify.app"
                     rel="noopener"
                     target="_blank"
@@ -277,7 +296,7 @@
         </section>
       </div>
     </main>
-    <script defer="" src="js/images.js"></script>
-    <script defer="" src="js/app.js"></script>
+
+    <script defer src="js/app.js"></script>
   </body>
 </html>

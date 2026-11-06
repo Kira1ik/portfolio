@@ -1,5 +1,4 @@
 <!doctype html>
-<!doctype html>
 
 <html lang="en">
   <head>
@@ -113,14 +112,20 @@
     <header>
       <div class="hd">
         <a class="brand" href="index.html"
-          ><b>Z H A N N A</b><small>JUNIOR FULLSTACK DEVELOPER</small></a
+          ><b>Z H A N N A</b
+          ><small data-no="JUNIOR FULLSTACK-UTVIKLER"
+            >JUNIOR FULLSTACK DEVELOPER</small
+          ></a
         >
         <nav id="nav">
-          <a href="index.html">HOME</a
-          ><a class="on" href="about.html">ABOUT ME</a
-          ><a href="skills.html">SKILLS</a><a href="projects.html">PROJECTS</a
-          ><a href="ambitions.html">AMBITIONS</a
-          ><a href="application.html">APPLICATION &amp; CV</a>
+          <a data-no="HJEM" href="index.html">HOME</a
+          ><a class="on" data-no="OM MEG" href="about.html">ABOUT ME</a
+          ><a data-no="FERDIGHETER" href="skills.html">SKILLS</a
+          ><a data-no="PROSJEKTER" href="projects.html">PROJECTS</a
+          ><a data-no="AMBISJONER" href="ambitions.html">AMBITIONS</a
+          ><a data-no="SØKNAD OG CV" href="application.html"
+            >APPLICATION &amp; CV</a
+          >
         </nav>
         <div class="right">
           <span class="pill">EN / NO</span
@@ -129,7 +134,7 @@
             class="cbtn"
             href="mailto:zhasli09@innlandetfylke.no"
             ><svg class="ic"><use href="#i-mail"></use></svg
-            ><span>CONTACT</span></a
+            ><span data-no="KONTAKT">CONTACT</span></a
           ><button aria-expanded="false" aria-label="Menu" id="bt">
             <i></i><i></i><i></i>
           </button>
@@ -140,49 +145,65 @@
       <div class="view active" data-view="om-meg">
         <section id="about">
           <div class="wrap">
-            <h2 class="g">A little about me.</h2>
-            <p class="sub g">
+            <h2 class="g" data-no="Litt om meg.">A little about me.</h2>
+            <p
+              class="sub g"
+              data-no="Et nysgjerrig sinn, en kreativ tilnærming og en lidenskap for å bygge ting med kode."
+            >
               A curious mind, a creative approach and a passion for building
               things with code.
             </p>
             <div class="card ab">
-              <img alt="" class="d bow1" data-i="bow.png" /><img
+              <img alt="" class="d bow1" src="images/bow.png" /><img
                 alt=""
                 class="d cross"
-                data-i="crossbones.png"
+                src="images/crossbones.png"
               />
-              <img alt="Zhanna" class="ph0" data-i="about.webp" />
-              <p>
+              <img alt="Zhanna" class="ph0" src="images/about.webp" />
+              <p
+                data-no="Jeg er en IM1-elev ved Hamar Katedralskole, og studerer informasjonsteknologi og medieproduksjon. Jeg er spesielt interessert i webutvikling, programmering og hvordan teknologi kan løse hverdagslige problemer."
+              >
                 I am an IM1 student at Hamar Katedralskole, studying Information
                 Technology and Media Production. I am particularly interested in
                 web development, programming and the way technology can solve
                 everyday problems.
               </p>
-              <p>
+              <p
+                data-no="Jeg jobber med HTML, CSS, JavaScript og Python. Jeg liker å ta en idé fra første skisse til et fungerende digitalt produkt. Min erfaring inkluderer å utvikle nettsider, interaktive applikasjoner, spill og prototyper."
+              >
                 I work with HTML, CSS, JavaScript and Python. I enjoy taking an
                 idea from the first sketch to a working digital product. My
                 experience includes developing websites, interactive
                 applications, games and prototypes.
               </p>
-              <q class="g">I enjoy turning ideas into digital experiences.</q>
+              <q
+                class="g"
+                data-no="Jeg liker å gjøre ideer om til digitale opplevelser."
+                >I enjoy turning ideas into digital experiences.</q
+              >
             </div>
           </div>
         </section>
-        <img alt="" class="lace" data-i="lace.webp" />
+        <img alt="" class="lace" src="images/lace.webp" />
         <div class="dam">
           <section id="interests">
             <div class="wrap">
-              <h2 class="g">Interests</h2>
-              <p class="sub in">
+              <h2 class="g" data-no="Interesser">Interests</h2>
+              <p
+                class="sub in"
+                data-no="Det jeg liker å bruke tiden på — på skolen og ellers."
+              >
                 What I like to spend my time on — in and outside of school.
               </p>
               <div class="grid3">
                 <article class="card sk">
                   <div class="sh">
                     <svg class="ic"><use href="#i-code"></use></svg>
-                    <h3>WEB DEVELOPMENT</h3>
+                    <h3 data-no="WEBUTVIKLING">WEB DEVELOPMENT</h3>
                   </div>
-                  <p>
+                  <p
+                    data-no="Bygge responsive nettsider og se et oppsett våkne til liv i nettleseren."
+                  >
                     Building responsive websites and watching a layout come
                     alive in the browser.
                   </p>
@@ -193,9 +214,11 @@
                 <article class="card sk">
                   <div class="sh">
                     <svg class="ic"><use href="#i-game"></use></svg>
-                    <h3>GAME PROJECTS</h3>
+                    <h3 data-no="SPILLPROSJEKTER">GAME PROJECTS</h3>
                   </div>
-                  <p>
+                  <p
+                    data-no="Små arkadespill med enkle regler, raske reaksjoner og rolig stemning."
+                  >
                     Small arcade games with simple rules, fast reactions and a
                     calm atmosphere.
                   </p>
@@ -206,9 +229,11 @@
                 <article class="card sk">
                   <div class="sh">
                     <svg class="ic"><use href="#i-design"></use></svg>
-                    <h3>INTERFACE DESIGN</h3>
+                    <h3 data-no="GRENSESNITTDESIGN">INTERFACE DESIGN</h3>
                   </div>
-                  <p>
+                  <p
+                    data-no="Skissere skjermer og flyt i Figma før jeg skriver én linje kode."
+                  >
                     Sketching screens and flows in Figma before writing a single
                     line of code.
                   </p>
@@ -220,77 +245,100 @@
                 <article class="card sk">
                   <div class="sh">
                     <svg class="ic"><use href="#i-sparkle"></use></svg>
-                    <h3>AI &amp; DIGITAL AWARENESS</h3>
+                    <h3 data-no="KI OG DIGITAL BEVISSTHET">
+                      AI &amp; DIGITAL AWARENESS
+                    </h3>
                   </div>
-                  <p>
+                  <p
+                    data-no="Bruke KI-verktøy med omtanke og spørre hva som er ekte og hva som er generert."
+                  >
                     Using AI tools wisely and asking what is real and what is
                     generated.
                   </p>
                   <div class="chips">
-                    <span>AI tools</span><span>Critical thinking</span>
+                    <span data-no="KI-verktøy">AI tools</span
+                    ><span data-no="Kritisk tenkning">Critical thinking</span>
                   </div>
                 </article>
                 <article class="card sk">
                   <div class="sh">
                     <svg class="ic"><use href="#i-book"></use></svg>
-                    <h3>LEARNING PYTHON</h3>
+                    <h3 data-no="LÆRE PYTHON">LEARNING PYTHON</h3>
                   </div>
-                  <p>
+                  <p
+                    data-no="Jobbe meg gjennom Python steg for steg med små øvingsfiler."
+                  >
                     Working through Python step by step with small practice
                     files.
                   </p>
                   <div class="chips">
-                    <span>Python</span><span>Practice</span>
+                    <span>Python</span><span data-no="Øving">Practice</span>
                   </div>
                 </article>
                 <article class="card sk">
                   <div class="sh">
                     <svg class="ic"><use href="#i-bulb"></use></svg>
-                    <h3>PROBLEM-SOLVING</h3>
+                    <h3 data-no="PROBLEMLØSNING">PROBLEM-SOLVING</h3>
                   </div>
-                  <p>
+                  <p
+                    data-no="Dele opp et stort problem i små steg og finne en ryddig løsning."
+                  >
                     Breaking a big problem into small steps and finding a clean
                     solution.
                   </p>
                   <div class="chips">
-                    <span>Logic</span><span>Debugging</span>
+                    <span data-no="Logikk">Logic</span
+                    ><span data-no="Feilsøking">Debugging</span>
                   </div>
                 </article>
               </div>
             </div>
           </section>
-          <img alt="" class="lace" data-i="lace.webp" />
+          <img alt="" class="lace" src="images/lace.webp" />
           <section id="strengths">
             <div class="wrap">
-              <h2 class="g">Strengths</h2>
-              <p class="sub in">
+              <h2 class="g" data-no="Styrker">Strengths</h2>
+              <p
+                class="sub in"
+                data-no="Egenskapene jeg tar med meg inn i hvert prosjekt og hvert team."
+              >
                 The qualities I bring to every project and every team.
               </p>
               <div class="grid3">
                 <article class="card sk">
                   <div class="sh">
                     <svg class="ic"><use href="#i-bulb"></use></svg>
-                    <h3>CURIOUS &amp; EAGER TO LEARN</h3>
+                    <h3 data-no="NYSGJERRIG OG LÆREVILLIG">
+                      CURIOUS &amp; EAGER TO LEARN
+                    </h3>
                   </div>
-                  <p>
+                  <p
+                    data-no="Jeg lærer nye verktøy raskt og liker å finne ut av ting."
+                  >
                     I pick up new tools quickly and enjoy figuring things out.
                   </p>
                 </article>
                 <article class="card sk">
                   <div class="sh">
                     <svg class="ic"><use href="#i-check"></use></svg>
-                    <h3>STRUCTURED &amp; INDEPENDENT</h3>
+                    <h3 data-no="STRUKTURERT OG SELVSTENDIG">
+                      STRUCTURED &amp; INDEPENDENT
+                    </h3>
                   </div>
-                  <p>
+                  <p
+                    data-no="Jeg planlegger arbeidet, deler det i steg og fullfører det jeg begynner på."
+                  >
                     I plan my work, break it into steps and finish what I start.
                   </p>
                 </article>
                 <article class="card sk">
                   <div class="sh">
                     <svg class="ic"><use href="#i-target"></use></svg>
-                    <h3>SOLUTION-ORIENTED</h3>
+                    <h3 data-no="LØSNINGSORIENTERT">SOLUTION-ORIENTED</h3>
                   </div>
-                  <p>
+                  <p
+                    data-no="Når noe ikke virker, leter jeg etter årsak og løsning."
+                  >
                     When something breaks I look for the cause and a fix, not
                     someone to blame.
                   </p>
@@ -298,9 +346,13 @@
                 <article class="card sk">
                   <div class="sh">
                     <svg class="ic"><use href="#i-doc"></use></svg>
-                    <h3>CAREFUL DOCUMENTATION</h3>
+                    <h3 data-no="NØYAKTIG DOKUMENTASJON">
+                      CAREFUL DOCUMENTATION
+                    </h3>
                   </div>
-                  <p>
+                  <p
+                    data-no="Jeg skriver ned valg, tester og fremdrift slik at andre kan følge arbeidet mitt."
+                  >
                     I write down decisions, tests and progress so others can
                     follow my work.
                   </p>
@@ -308,16 +360,24 @@
                 <article class="card sk">
                   <div class="sh">
                     <svg class="ic"><use href="#i-sparkle"></use></svg>
-                    <h3>CREATIVE &amp; FULL OF IDEAS</h3>
+                    <h3 data-no="KREATIV OG IDÉRIK">
+                      CREATIVE &amp; FULL OF IDEAS
+                    </h3>
                   </div>
-                  <p>I like turning a first sketch into something memorable.</p>
+                  <p
+                    data-no="Jeg liker å gjøre en første skisse om til noe minneverdig."
+                  >
+                    I like turning a first sketch into something memorable.
+                  </p>
                 </article>
                 <article class="card sk">
                   <div class="sh">
                     <svg class="ic"><use href="#i-users"></use></svg>
-                    <h3>GOOD COLLABORATOR</h3>
+                    <h3 data-no="GOD SAMARBEIDSPARTNER">GOOD COLLABORATOR</h3>
                   </div>
-                  <p>
+                  <p
+                    data-no="Jeg deler ideer åpent, lytter til andre og liker å bygge sammen."
+                  >
                     I share ideas openly, listen to others and enjoy building
                     together.
                   </p>
@@ -328,7 +388,7 @@
         </div>
       </div>
     </main>
-    <script defer="" src="js/images.js"></script>
-    <script defer="" src="js/app.js"></script>
+
+    <script defer src="js/app.js"></script>
   </body>
 </html>

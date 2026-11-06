@@ -1,5 +1,4 @@
 <!doctype html>
-<!doctype html>
 
 <html lang="en">
   <head>
@@ -113,13 +112,20 @@
     <header>
       <div class="hd">
         <a class="brand" href="index.html"
-          ><b>Z H A N N A</b><small>JUNIOR FULLSTACK DEVELOPER</small></a
+          ><b>Z H A N N A</b
+          ><small data-no="JUNIOR FULLSTACK-UTVIKLER"
+            >JUNIOR FULLSTACK DEVELOPER</small
+          ></a
         >
         <nav id="nav">
-          <a href="index.html">HOME</a><a href="about.html">ABOUT ME</a
-          ><a href="skills.html">SKILLS</a><a href="projects.html">PROJECTS</a
-          ><a class="on" href="ambitions.html">AMBITIONS</a
-          ><a href="application.html">APPLICATION &amp; CV</a>
+          <a data-no="HJEM" href="index.html">HOME</a
+          ><a data-no="OM MEG" href="about.html">ABOUT ME</a
+          ><a data-no="FERDIGHETER" href="skills.html">SKILLS</a
+          ><a data-no="PROSJEKTER" href="projects.html">PROJECTS</a
+          ><a class="on" data-no="AMBISJONER" href="ambitions.html">AMBITIONS</a
+          ><a data-no="SØKNAD OG CV" href="application.html"
+            >APPLICATION &amp; CV</a
+          >
         </nav>
         <div class="right">
           <span class="pill">EN / NO</span
@@ -128,7 +134,7 @@
             class="cbtn"
             href="mailto:zhasli09@innlandetfylke.no"
             ><svg class="ic"><use href="#i-mail"></use></svg
-            ><span>CONTACT</span></a
+            ><span data-no="KONTAKT">CONTACT</span></a
           ><button aria-expanded="false" aria-label="Menu" id="bt">
             <i></i><i></i><i></i>
           </button>
@@ -140,55 +146,77 @@
         <div class="dam">
           <section id="drives">
             <div class="wrap">
-              <h2 class="g">Ambitions &amp; what drives me</h2>
-              <p class="sub in">
+              <h2 class="g" data-no="Ambisjoner og det som driver meg">
+                Ambitions &amp; what drives me
+              </h2>
+              <p
+                class="sub in"
+                data-no="Retningen jeg vil vokse i — og egenskapene jeg tar med meg til hvert prosjekt."
+              >
                 The direction I want to grow in — and the qualities I bring to
                 each project.
               </p>
               <div class="grid2 dvg">
                 <article class="card dv">
-                  <h3 class="g">Building things that matter.</h3>
-                  <p>
+                  <h3 class="g" data-no="Å bygge ting som betyr noe.">
+                    Building things that matter.
+                  </h3>
+                  <p
+                    data-no="Målet mitt er å vokse som full-stack-utvikler, styrke programmeringsferdighetene mine og bygge nyttige digitale produkter. Jeg vil fortsette å lære gjennom ekte prosjekter, samarbeid og praktisk erfaring."
+                  >
                     My goal is to grow as a full-stack developer, strengthen my
                     programming skills and build useful digital products. I want
                     to keep learning through real projects, collaboration and
                     practical experience.
                   </p>
                   <div class="tags">
-                    <span>Web development</span><span>Programming</span
-                    ><span>Continuous learning</span>
+                    <span data-no="Webutvikling">Web development</span
+                    ><span data-no="Programmering">Programming</span
+                    ><span data-no="Kontinuerlig læring"
+                      >Continuous learning</span
+                    >
                   </div>
                 </article>
                 <article class="card dv">
-                  <h3 class="g">Curious by nature.</h3>
-                  <p>
+                  <h3 class="g" data-no="Nysgjerrig av natur.">
+                    Curious by nature.
+                  </h3>
+                  <p
+                    data-no="Jeg liker å utforske webutvikling, programmering, spillprosjekter og grensesnittprototyping. Jeg liker å løse problemer, jobbe selvstendig, organisere prosessen min og dokumentere hvordan et prosjekt utvikler seg."
+                  >
                     I enjoy exploring web development, programming, game
                     projects and interface prototyping. I like solving problems,
                     working independently, organising my process and documenting
                     how a project develops.
                   </p>
                   <div class="tags">
-                    <span>Curiosity</span><span>Problem-solving</span
-                    ><span>Structure</span>
+                    <span data-no="Nysgjerrighet">Curiosity</span
+                    ><span data-no="Problemløsning">Problem-solving</span
+                    ><span data-no="Struktur">Structure</span>
                   </div>
                 </article>
               </div>
             </div>
           </section>
-          <img alt="" class="lace" data-i="lace.webp" />
+          <img alt="" class="lace" src="images/lace.webp" />
           <section id="roadmap">
             <div class="wrap">
-              <h2 class="g">My road ahead</h2>
-              <p class="sub in">
+              <h2 class="g" data-no="Veien videre">My road ahead</h2>
+              <p
+                class="sub in"
+                data-no="Tre steg fra der jeg er i dag til dit jeg vil."
+              >
                 Three steps from where I am today to where I want to be.
               </p>
               <div class="grid3">
                 <article class="card sk">
                   <div class="sh">
                     <svg class="ic"><use href="#i-book"></use></svg>
-                    <h3>NOW · 2026–2028</h3>
+                    <h3 data-no="NÅ · 2026–2028">NOW · 2026–2028</h3>
                   </div>
-                  <p>
+                  <p
+                    data-no="Studerer informasjonsteknologi og medieproduksjon (IM1) ved Hamar katedralskole og bygger et solid grunnlag i webutvikling og Python."
+                  >
                     Studying IT and media production (IM1) at Hamar
                     Katedralskole and building a solid base in web development
                     and Python.
@@ -200,29 +228,33 @@
                 <article class="card sk">
                   <div class="sh">
                     <svg class="ic"><use href="#i-users"></use></svg>
-                    <h3>NEXT</h3>
+                    <h3 data-no="NESTE STEG">NEXT</h3>
                   </div>
-                  <p>
+                  <p
+                    data-no="Få arbeidserfaring, jobbe i team på ekte prosjekter og lære hvordan profesjonelle utviklere jobber."
+                  >
                     Getting work experience, working in a team on real projects
                     and learning how professional developers work.
                   </p>
                   <div class="chips">
-                    <span>Teamwork</span><span>Git</span
-                    ><span>Real projects</span>
+                    <span data-no="Samarbeid">Teamwork</span><span>Git</span
+                    ><span data-no="Ekte prosjekter">Real projects</span>
                   </div>
                 </article>
                 <article class="card sk">
                   <div class="sh">
                     <svg class="ic"><use href="#i-rocket"></use></svg>
-                    <h3>GOAL</h3>
+                    <h3 data-no="MÅL">GOAL</h3>
                   </div>
-                  <p>
+                  <p
+                    data-no="Bli en fullstack-utvikler som bygger nyttige digitale produkter folk liker å bruke."
+                  >
                     Becoming a full-stack developer who builds useful digital
                     products people enjoy using.
                   </p>
                   <div class="chips">
                     <span>Frontend</span><span>Backend</span
-                    ><span>Useful products</span>
+                    ><span data-no="Nyttige produkter">Useful products</span>
                   </div>
                 </article>
               </div>
@@ -231,7 +263,7 @@
         </div>
       </div>
     </main>
-    <script defer="" src="js/images.js"></script>
-    <script defer="" src="js/app.js"></script>
+
+    <script defer src="js/app.js"></script>
   </body>
 </html>
