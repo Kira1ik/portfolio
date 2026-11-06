@@ -854,3 +854,180 @@ h1 span {
     flex: 1;
   }
 }
+
+/* =========================================================
+   SHADOW SYSTEM — layered, purple-tinted, on-brand
+   ========================================================= */
+:root {
+  --sh-xs: 0 1px 3px rgba(0, 0, 0, 0.3), 0 1px 1px rgba(0, 0, 0, 0.35);
+  --sh-sm: 0 3px 8px -2px rgba(15, 8, 22, 0.5), 0 1px 2px rgba(0, 0, 0, 0.35);
+
+  --sh-card:
+    0 14px 32px -14px rgba(15, 8, 22, 0.72),
+    0 6px 14px -6px rgba(0, 0, 0, 0.42), inset 0 1px 0 rgba(212, 191, 227, 0.08);
+
+  --sh-card-hover:
+    0 24px 52px -18px rgba(15, 8, 22, 0.82),
+    0 10px 22px -8px rgba(0, 0, 0, 0.5),
+    0 0 42px -8px rgba(155, 130, 172, 0.45),
+    inset 0 1px 0 rgba(212, 191, 227, 0.14);
+
+  --sh-frame:
+    0 28px 68px -26px rgba(15, 8, 22, 0.85),
+    0 12px 26px -12px rgba(0, 0, 0, 0.55), 0 0 0 1px rgba(181, 155, 198, 0.06),
+    inset 0 1px 0 rgba(212, 191, 227, 0.12);
+
+  --sh-inset-img:
+    inset 0 1px 0 rgba(212, 191, 227, 0.1),
+    inset 0 -2px 10px rgba(0, 0, 0, 0.4),
+    inset 0 0 40px -12px rgba(0, 0, 0, 0.35);
+
+  --sh-btn:
+    0 6px 14px -6px rgba(15, 8, 22, 0.6), 0 2px 4px -1px rgba(0, 0, 0, 0.35),
+    inset 0 1px 0 rgba(212, 191, 227, 0.12);
+
+  --sh-btn-hover:
+    0 12px 24px -10px rgba(15, 8, 22, 0.7), 0 4px 8px -2px rgba(0, 0, 0, 0.4),
+    inset 0 1px 0 rgba(212, 191, 227, 0.2);
+}
+
+/* --- Main cards (.ab, .sk, .lg, .dv, .pj) --- */
+.card {
+  box-shadow: var(--sh-card);
+}
+
+.card,
+.card.reveal {
+  transition:
+    box-shadow 0.4s cubic-bezier(0.22, 1, 0.36, 1),
+    translate 0.4s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.card:hover {
+  translate: 0 -4px;
+  box-shadow: var(--sh-card-hover);
+}
+
+/* --- Hero frame & footer frame --- */
+.hc,
+.ft {
+  box-shadow: var(--sh-frame);
+}
+
+/* --- Inner panels (hero image, footer inner) --- */
+.hin,
+.fin {
+  box-shadow: var(--sh-inset-img);
+}
+
+/* --- Project card header strip --- */
+.ph {
+  box-shadow:
+    var(--sh-sm),
+    inset 0 1px 0 rgba(212, 191, 227, 0.07);
+}
+
+/* --- Buttons --- */
+.btn {
+  box-shadow: var(--sh-btn);
+}
+
+.btn,
+.btn.magnet {
+  transition:
+    translate 0.35s cubic-bezier(0.22, 1, 0.36, 1),
+    box-shadow 0.35s cubic-bezier(0.22, 1, 0.36, 1),
+    filter 0.25s ease;
+}
+
+.btn:hover {
+  box-shadow: var(--sh-btn-hover);
+}
+
+.btn.ghost {
+  box-shadow: var(--sh-xs);
+}
+
+.btn.ghost:hover {
+  box-shadow: var(--sh-sm);
+}
+
+/* --- Small chips, tags, language pill --- */
+.chips span,
+.tags span,
+.pill {
+  box-shadow:
+    var(--sh-xs),
+    inset 0 1px 0 rgba(212, 191, 227, 0.06);
+}
+
+/* --- Header default shadow (stronger .scrolled handled by JS) --- */
+header {
+  box-shadow:
+    0 2px 6px -1px rgba(0, 0, 0, 0.35),
+    0 1px 0 rgba(0, 0, 0, 0.35);
+}
+
+/* --- Language glyph subtle glow --- */
+.lg b {
+  text-shadow: 0 0 20px rgba(181, 155, 198, 0.3);
+}
+
+/* --- Floating decorations get soft depth --- */
+.cat1,
+.cat2,
+.cherry1,
+.cherry2,
+.bow1,
+.bow2,
+.bow3,
+.cross {
+  filter: drop-shadow(0 14px 20px rgba(15, 8, 22, 0.55))
+    drop-shadow(0 3px 6px rgba(0, 0, 0, 0.4));
+}
+
+/* --- Mobile nav dropdown gets a shadow --- */
+@media (max-width: 820px) {
+  nav.open {
+    box-shadow: 0 14px 30px -12px rgba(0, 0, 0, 0.7);
+  }
+}
+
+/* --- Mobile tuning: lighter shadows for smaller screens --- */
+@media (max-width: 820px) {
+  :root {
+    --sh-card:
+      0 10px 24px -10px rgba(15, 8, 22, 0.7),
+      0 4px 10px -4px rgba(0, 0, 0, 0.42),
+      inset 0 1px 0 rgba(212, 191, 227, 0.07);
+    --sh-card-hover:
+      0 16px 34px -14px rgba(15, 8, 22, 0.78),
+      0 6px 14px -6px rgba(0, 0, 0, 0.48),
+      0 0 28px -6px rgba(155, 130, 172, 0.4);
+    --sh-frame:
+      0 18px 44px -18px rgba(15, 8, 22, 0.8),
+      0 8px 18px -8px rgba(0, 0, 0, 0.5), 0 0 0 1px rgba(181, 155, 198, 0.05);
+  }
+
+  .cat1,
+  .cat2,
+  .cherry1,
+  .cherry2,
+  .bow1,
+  .bow2,
+  .bow3,
+  .cross {
+    filter: drop-shadow(0 8px 12px rgba(15, 8, 22, 0.5));
+  }
+
+  .card:hover {
+    translate: 0 0;
+  }
+}
+
+/* --- Respect reduced motion --- */
+@media (prefers-reduced-motion: reduce) {
+  .card:hover {
+    translate: 0 0;
+  }
+}
