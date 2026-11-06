@@ -1,25 +1,41 @@
-# Zhanna Sliepnova — Portfolio
+# ✧ Zhanna — Personal Portfolio
 
-Многостраничная версия портфолио. Норвежские тексты лежат прямо в HTML в атрибуте `data-no`.
+Welcome to my personal portfolio!
 
-## Структура
+This website is a little space where I showcase who I am, my skills, my projects, and my ambitions. It reflects my personality, creativity, and the things I enjoy creating.
 
-- `index.html` — главная
-- `about.html` — обо мне
-- `skills.html` — навыки
-- `projects.html` — проекты
-- `ambitions.html` — амбиции
-- `application.html` — заявка и CV
-- `css/style.css` — стили
-- `js/app.js` — меню, переключение языка (EN/NO) и небольшие анимации
-- `images/` — изображения
+## ♡ About the Project
 
-## Запуск
+The portfolio is built as a multi-page website, with each page dedicated to a different part of my journey.
 
-Можно открыть `index.html` напрямую. Для локального сервера из этой папки запусти:
+- **Home** — a welcome page and introduction.
+- **About Me** — a little more about who I am.
+- **Skills** — my skills and areas of interest.
+- **Projects** — things I have worked on.
+- **Ambitions** — my goals and future plans.
+- **Application** — additional information and CV.
 
-```bash
-python -m http.server 8000
+## ✧ Built With
+
+- HTML5
+- CSS3
+- JavaScript
+
+## ♡ Project Structure
+
+```text
+Zhanna-Portfolio/
+├── index.html
+├── about.html
+├── skills.html
+├── projects.html
+├── ambitions.html
+├── application.html
+├── css/
+├── js/
+└── images/
 ```
 
-Затем открой `http://localhost:8000`.
+## ✿ Thank You for Visiting!
+
+Thank you for taking the time to explore my portfolio. I hope you enjoy looking around and getting to know a little more about me and my work.
