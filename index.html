@@ -2,367 +2,433 @@
 <html lang="en">
   <head>
     <meta charset="utf-8" />
-    <meta
-      name="viewport"
-      content="width=device-width, initial-scale=1, viewport-fit=cover"
-    />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Zhanna — Junior Fullstack Developer</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600&family=Inter:wght@400;500;600&display=swap"
       rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Cormorant:wght@500;600&family=Cormorant+Garamond:wght@500;600&family=Inter:wght@400;500;600&display=swap"
     />
     <link rel="stylesheet" href="style.css" />
   </head>
-  <body>
-    <div class="glow" id="glow"></div>
-
-    <!-- ФОН: слои из Figma. Картинки задаются в CSS (см. комментарий в начале style.css) -->
-    <div class="bg">
-      <div class="bg-base"></div>
-      <div class="bg-ov"></div>
-      <div class="bg-l l1"></div>
-      <div class="bg-l l2"></div>
-      <div class="bg-l l3"></div>
-      <div class="bg-l l4"></div>
-    </div>
-
+  <body id="top">
     <svg width="0" height="0" style="position: absolute">
-      <defs>
-        <symbol id="i-code" viewBox="0 0 38 38">
-          <path d="M14 11 5 19l9 8M24 11l9 8-9 8M21 7l-4 24" />
-        </symbol>
-        <symbol id="i-game" viewBox="0 0 38 38">
-          <rect x="4" y="11" width="30" height="17" rx="8" />
-          <path d="M11 16v7M7.5 19.5h7" />
-          <circle cx="25" cy="18" r="1.4" />
-          <circle cx="29" cy="22" r="1.4" />
-        </symbol>
-        <symbol id="i-design" viewBox="0 0 38 38">
-          <path d="M6 32 8 24 26 6l6 6L14 30z" />
-          <path d="m22 10 6 6" />
-        </symbol>
-        <symbol id="i-branch" viewBox="0 0 38 38">
-          <circle cx="11" cy="9" r="3.5" />
-          <circle cx="11" cy="29" r="3.5" />
-          <circle cx="27" cy="15" r="3.5" />
-          <path d="M11 12.5v13M27 18.5c0 6-16 3-16 7" />
-        </symbol>
-        <symbol id="i-doc" viewBox="0 0 38 38">
-          <path d="M9 4h14l7 7v23H9z" />
-          <path d="M23 4v7h7M14 18h12M14 24h12M14 30h8" />
-        </symbol>
-        <symbol id="i-spark" viewBox="0 0 38 38">
-          <path
-            d="M19 4c1.5 9 4 11.500 13 15-9 3.500-11.500 6-13 15-1.500-9-4-11.500-13-15 9-3.500 11.500-6 13-15z"
-          />
-        </symbol>
-        <symbol id="i-mail" viewBox="0 0 38 38">
-          <rect x="4" y="8" width="30" height="22" rx="3" />
-          <path d="m5 10 14 11L33 10" />
-        </symbol>
-      </defs>
+      <symbol id="i-code" viewBox="0 0 24 24">
+        <polyline points="8 6 2 12 8 18" />
+        <polyline points="16 6 22 12 16 18" />
+        <line x1="14" y1="4" x2="10" y2="20" />
+      </symbol>
+      <symbol id="i-game" viewBox="0 0 24 24">
+        <path
+          d="M6 8h12a4 4 0 0 1 4 4v3a3 3 0 0 1-5.2 2L15 15H9l-1.8 2A3 3 0 0 1 2 15v-3a4 4 0 0 1 4-4z"
+        />
+        <path d="M7 11v3M5.5 12.5h3" />
+        <circle cx="15.5" cy="11.5" r=".6" />
+        <circle cx="18" cy="13.5" r=".6" />
+      </symbol>
+      <symbol id="i-design" viewBox="0 0 24 24">
+        <path d="M12 19l7-7 3 3-7 7-3-3z" />
+        <path d="M18 13l-1.5-7.5L2 2l3.5 14.5L13 18l5-5z" />
+        <circle cx="11" cy="11" r="1.6" />
+      </symbol>
+      <symbol id="i-branch" viewBox="0 0 24 24">
+        <circle cx="6" cy="5" r="2.5" />
+        <circle cx="6" cy="19" r="2.5" />
+        <circle cx="18" cy="8" r="2.5" />
+        <path d="M6 7.5v9M18 10.5c0 4-6 3-11 6.5" />
+      </symbol>
+      <symbol id="i-doc" viewBox="0 0 24 24">
+        <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" />
+        <polyline points="14 2 14 8 20 8" />
+        <line x1="8" y1="13" x2="16" y2="13" />
+        <line x1="8" y1="17" x2="16" y2="17" />
+      </symbol>
+      <symbol id="i-sparkle" viewBox="0 0 24 24">
+        <path d="M12 2l2.2 7.3L22 12l-7.8 2.7L12 22l-2.2-7.3L2 12l7.8-2.7z" />
+      </symbol>
+      <symbol id="i-mail" viewBox="0 0 24 24">
+        <rect x="2" y="4" width="20" height="16" rx="2" />
+        <polyline points="22 6 12 13 2 6" />
+      </symbol>
+      <symbol id="i-gh" viewBox="0 0 24 24">
+        <path
+          d="M9 19c-4.3 1.4-4.3-2.5-6-3m12 5v-3.5c0-1 .1-1.4-.5-2 2.8-.3 5.5-1.4 5.5-6a4.6 4.6 0 0 0-1.3-3.2 4.2 4.2 0 0 0-.1-3.2s-1.1-.3-3.5 1.3a12 12 0 0 0-6.2 0C6.5 2.8 5.4 3.1 5.4 3.1a4.2 4.2 0 0 0-.1 3.2A4.6 4.6 0 0 0 4 9.5c0 4.6 2.7 5.7 5.5 6-.6.6-.6 1.2-.5 2V21"
+        />
+      </symbol>
     </svg>
-
-    <nav>
-      <div class="wrap in">
-        <div class="logo">ZHANNA<small>JUNIOR FULLSTACK DEVELOPER</small></div>
-        <ul>
-          <li><a href="#about">ABOUT</a></li>
-          <li><a href="#skills">SKILLS</a></li>
-          <li><a href="#projects">PROJECTS</a></li>
-          <li><a href="#contact">CONTACT</a></li>
-        </ul>
-        <button class="lang" id="lang" aria-label="Switch language">
-          <b>EN</b> / NO
-        </button>
-      </div>
-      <!-- МЕСТО: лента В НАЧАЛЕ страницы (над меню) -->
-      <div
-        class="lace"
-        style="position: absolute; left: 0; right: 0; top: -13px; z-index: 1"
-      ></div>
-    </nav>
-
-    <header class="hero">
-      <div class="wrap">
-        <div class="frame rv">
-          <div class="stage" id="stage">
-            <div class="photo">
-              <!-- МЕСТО: главное фото <img src="assets/photo.jpg" alt="Zhanna"> -->
-            </div>
-            <div class="txt">
-              <h1>
-                <span>Junior Fullstack</span
-                ><em><span id="type"></span><span class="caret"></span></em>
-              </h1>
-              <span class="pill lbl">IM1 · HAMAR KATEDRALSKOLE</span>
-              <div class="btns">
-                <a class="btn" href="#projects">EXPLORE PROJECTS ↗</a>
-                <a class="btn o" href="#">VIEW CV ↗</a>
-              </div>
-            </div>
-            <!-- МЕСТО: чёрный кот (слева внизу) -->
-            <div
-              class="deco float"
-              style="
-                left: -4px;
-                bottom: -14px;
-                width: 170px;
-                height: 177px;
-                rotate: 9deg;
-              "
-            >
-              <!-- <img src="assets/cat.png" alt=""> -->
-            </div>
-            <!-- МЕСТО: картинка справа сверху (image 5) -->
-            <div
-              class="deco float"
-              style="
-                right: -40px;
-                top: -40px;
-                width: 300px;
-                height: 300px;
-                animation-delay: -2s;
-              "
-            >
-              <!-- <img src="assets/image5.png" alt=""> -->
-            </div>
-          </div>
+    <header>
+      <div class="hd">
+        <a class="brand" href="#top"
+          ><b>Z H A N N A</b><small>JUNIOR FULLSTACK DEVELOPER</small></a
+        >
+        <nav id="nav">
+          <a href="#about">ABOUT</a><a href="#skills">SKILLS</a
+          ><a href="#projects">PROJECTS</a><a href="#contact">CONTACT</a>
+        </nav>
+        <div class="right">
+          <span class="pill">EN / NO</span
+          ><button id="bt" aria-label="Menu" aria-expanded="false">
+            <i></i><i></i><i></i>
+          </button>
         </div>
-        <div class="lace" style="margin-top: 30px"></div>
       </div>
     </header>
-
-    <section id="about">
-      <div class="wrap">
-        <h2 class="rv">A little about me.</h2>
-        <p class="sub rv" style="font: 500 22px var(--serif); color: var(--t)">
-          A curious mind, a creative approach and a passion for building things
-          with code.
-        </p>
-        <div class="card about rv" style="padding: 28px 24px">
-          <div class="pic">
-            <!-- МЕСТО: твоё фото <img src="assets/me.jpg" alt=""> -->
+    <main>
+      <section class="hero">
+        <div class="hc">
+          <div class="hin">
+            <h1>
+              <span class="a1">Junior Fullstack</span
+              ><span class="a2">Developer.</span>
+            </h1>
+            <span class="chip">IM1 · HAMAR KATEDRALSKOLE</span>
+            <div class="btns">
+              <a class="btn" href="#projects">EXPLORE PROJECTS ↗</a
+              ><a class="btn ghost" href="#">VIEW CV ↗</a>
+            </div>
           </div>
-          <p>
-            I am an IM1 student at Hamar Katedralskole, studying Information
-            Technology and Media Production. I am particularly interested in web
-            development, programming and the way technology can solve everyday
-            problems.
+          <img class="d swirl" src="images/swirl.png" alt="" /><img
+            class="d cat1"
+            src="images/cat.png"
+            alt=""
+          />
+        </div>
+      </section>
+      <img class="lace" src="images/lace.webp" alt="" />
+      <section id="about">
+        <div class="wrap">
+          <h2 class="g">A little about me.</h2>
+          <p class="sub g">
+            A curious mind, a creative approach and a passion for building
+            things with code.
           </p>
-          <p>
-            I work with HTML, CSS, JavaScript and Python. I enjoy taking an idea
-            from the first sketch to a working digital product. My experience
-            includes developing websites, interactive applications, games and
-            prototypes.
-          </p>
-          <div class="quote">
-            I enjoy turning ideas into digital experiences.
-          </div>
-        </div>
-        <!-- МЕСТО: бантик справа сверху -->
-        <div
-          class="deco float"
-          style="
-            right: -10px;
-            top: -30px;
-            width: 210px;
-            height: 177px;
-            rotate: 9deg;
-            z-index: 6;
-          "
-        >
-          <!-- <img src="assets/bow.png" alt=""> -->
-        </div>
-        <!-- МЕСТО: бантик слева внизу -->
-        <div
-          class="deco float"
-          style="
-            left: -30px;
-            bottom: -30px;
-            width: 160px;
-            height: 75px;
-            rotate: 180deg;
-            animation-delay: -3s;
-          "
-        >
-          <!-- <img src="assets/bow2.png" alt=""> -->
-        </div>
-      </div>
-    </section>
-
-    <!-- МЕСТО: лента -->
-    <div class="lace"></div>
-    <section id="skills">
-      <div class="wrap">
-        <h2 class="rv">Tools, skills &amp; technology.</h2>
-        <p class="sub rv">
-          The technologies and tools I use to turn ideas into working digital
-          projects.
-        </p>
-        <div class="g3" id="skillgrid"></div>
-        <!-- МЕСТО: вишни (справа сверху) -->
-        <div
-          class="deco float"
-          style="
-            right: -40px;
-            top: -30px;
-            width: 183px;
-            height: 162px;
-            rotate: 11deg;
-          "
-        >
-          <!-- <img src="assets/cherry.png" alt=""> -->
-        </div>
-      </div>
-    </section>
-
-    <!-- МЕСТО: лента -->
-    <div class="lace"></div>
-    <section>
-      <div class="wrap">
-        <h2 class="rv">Languages</h2>
-        <div style="height: 30px"></div>
-        <div class="g4">
-          <div class="card lang-c rv">
-            <b>RU</b>
-            <div><span>Russian</span><i>Native</i></div>
-          </div>
-          <div class="card lang-c rv" style="--d: 0.1s">
-            <b>UA</b>
-            <div><span>Ukrainian</span><i>Native</i></div>
-          </div>
-          <div class="card lang-c rv" style="--d: 0.2s">
-            <b>NO</b>
-            <div><span>Norwegian</span><i>Intermediate</i></div>
-          </div>
-          <div class="card lang-c rv" style="--d: 0.3s">
-            <b>EN</b>
-            <div><span>English</span><i>Intermediate</i></div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- МЕСТО: лента -->
-    <div class="lace"></div>
-    <section>
-      <div class="wrap">
-        <h2 class="rv" style="font-size: 46px">What drives me</h2>
-        <p class="sub rv" style="font-size: 14px">
-          The direction I want to grow in — and the qualities I bring to each
-          project.
-        </p>
-        <div class="g2">
-          <div class="card drive rv">
-            <h3>Building things that matter.</h3>
+          <div class="card ab">
+            <img class="d bow1" src="images/bow.png" alt="" /><img
+              class="d cross"
+              src="images/crossbones.png"
+              alt=""
+            />
+            <img class="ph0" src="images/about.webp" alt="Zhanna" />
             <p>
-              My goal is to grow as a full-stack developer, strengthen my
-              programming skills and build useful digital products. I want to
-              keep learning through real projects, collaboration and practical
-              experience.
+              I am an IM1 student at Hamar Katedralskole, studying Information
+              Technology and Media Production. I am particularly interested in
+              web development, programming and the way technology can solve
+              everyday problems.
             </p>
-            <hr />
-            <span class="lbl"
-              >WEB DEVELOPMENT &nbsp;·&nbsp; PROGRAMMING &nbsp;·&nbsp;
-              CONTINUOUS LEARNING</span
-            >
-          </div>
-          <div class="card drive rv" style="--d: 0.15s">
-            <h3>Curious by nature.</h3>
             <p>
-              I enjoy exploring web development, programming, game projects and
-              interface prototyping. I like solving problems, working
-              independently, organising my process and documenting how a project
-              develops.
+              I work with HTML, CSS, JavaScript and Python. I enjoy taking an
+              idea from the first sketch to a working digital product. My
+              experience includes developing websites, interactive applications,
+              games and prototypes.
             </p>
-            <hr />
-            <span class="lbl"
-              >CURIOSITY &nbsp;·&nbsp; PROBLEM-SOLVING &nbsp;·&nbsp;
-              STRUCTURE</span
-            >
+            <q class="g">I enjoy turning ideas into digital experiences.</q>
           </div>
         </div>
+      </section>
+      <div class="dam">
+        <img class="lace" src="images/lace.webp" alt="" />
+        <section id="skills">
+          <div class="wrap">
+            <h2 class="g">Tools, skills &amp; technology.</h2>
+            <p class="sub in">
+              The technologies and tools I use to turn ideas into working
+              digital projects.
+            </p>
+            <div class="grid3">
+              <img class="d cherry1" src="images/cherry.png" alt="" />
+              <article class="card sk">
+                <div class="sh">
+                  <svg class="ic"><use href="#i-code" /></svg>
+                  <h3>WEB DEVELOPMENT</h3>
+                </div>
+                <p>
+                  Responsive websites and interactive interfaces, focused on
+                  structure, functionality and user experience.
+                </p>
+                <div class="chips">
+                  <span>HTML</span><span>CSS</span><span>JavaScript</span>
+                </div>
+              </article>
+              <article class="card sk">
+                <div class="sh">
+                  <svg class="ic"><use href="#i-game" /></svg>
+                  <h3>PROGRAMMING</h3>
+                </div>
+                <p>
+                  Writing code, working with logic, solving problems and
+                  creating interactive applications and games.
+                </p>
+                <div class="chips">
+                  <span>Python</span><span>JavaScript</span><span>Pygame</span>
+                </div>
+              </article>
+              <article class="card sk">
+                <div class="sh">
+                  <svg class="ic"><use href="#i-design" /></svg>
+                  <h3>DESIGN &amp; PROTOTYPING</h3>
+                </div>
+                <p>
+                  Creating layouts, planning interfaces and turning concepts
+                  into visual prototypes.
+                </p>
+                <div class="chips">
+                  <span>Figma</span><span>UI design</span
+                  ><span>Wireframes</span>
+                </div>
+              </article>
+              <article class="card sk">
+                <img class="d bow3" src="images/bow.png" alt="" />
+                <div class="sh">
+                  <svg class="ic"><use href="#i-branch" /></svg>
+                  <h3>DEVELOPMENT TOOLS</h3>
+                </div>
+                <p>
+                  Organising projects, managing code and working with
+                  development environments.
+                </p>
+                <div class="chips">
+                  <span>VS Code</span><span>GitHub</span><span>Git</span>
+                </div>
+              </article>
+              <article class="card sk">
+                <div class="sh">
+                  <svg class="ic"><use href="#i-doc" /></svg>
+                  <h3>DOCUMENTATION</h3>
+                </div>
+                <p>
+                  Structured project documentation, testing and explaining
+                  technical decisions.
+                </p>
+                <div class="chips">
+                  <span>Reports</span><span>Testing</span><span>Planning</span>
+                </div>
+              </article>
+              <article class="card sk">
+                <div class="sh">
+                  <svg class="ic"><use href="#i-sparkle" /></svg>
+                  <h3>AI-ASSISTED WORKFLOW</h3>
+                </div>
+                <p>
+                  Using AI tools for brainstorming, research, debugging and code
+                  explanations.
+                </p>
+                <div class="chips">
+                  <span>AI tools</span><span>Research</span
+                  ><span>Debugging</span>
+                </div>
+              </article>
+            </div>
+          </div>
+        </section>
+        <img class="lace" src="images/lace.webp" alt="" />
+        <section id="languages">
+          <div class="wrap">
+            <h2 class="g">Languages</h2>
+            <div class="grid4">
+              <div class="card lg">
+                <b class="g">RU</b>
+                <div>
+                  <h3>Russian</h3>
+                  <p>Native</p>
+                </div>
+              </div>
+              <div class="card lg">
+                <b class="g">UA</b>
+                <div>
+                  <h3>Ukrainian</h3>
+                  <p>Native</p>
+                </div>
+              </div>
+              <div class="card lg">
+                <b class="g">NO</b>
+                <div>
+                  <h3>Norwegian</h3>
+                  <p>Intermediate</p>
+                </div>
+              </div>
+              <div class="card lg">
+                <b class="g">EN</b>
+                <div>
+                  <h3>English</h3>
+                  <p>Intermediate</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+        <img class="lace" src="images/lace.webp" alt="" />
+        <section id="drives">
+          <div class="wrap">
+            <h2 class="g">What drives me</h2>
+            <p class="sub in">
+              The direction I want to grow in — and the qualities I bring to
+              each project.
+            </p>
+            <div class="grid2 dvg">
+              <article class="card dv">
+                <h3 class="g">Building things that matter.</h3>
+                <p>
+                  My goal is to grow as a full-stack developer, strengthen my
+                  programming skills and build useful digital products. I want
+                  to keep learning through real projects, collaboration and
+                  practical experience.
+                </p>
+                <div class="tags">
+                  <span>Web development</span><span>Programming</span
+                  ><span>Continuous learning</span>
+                </div>
+              </article>
+              <article class="card dv">
+                <h3 class="g">Curious by nature.</h3>
+                <p>
+                  I enjoy exploring web development, programming, game projects
+                  and interface prototyping. I like solving problems, working
+                  independently, organising my process and documenting how a
+                  project develops.
+                </p>
+                <div class="tags">
+                  <span>Curiosity</span><span>Problem-solving</span
+                  ><span>Structure</span>
+                </div>
+              </article>
+            </div>
+          </div>
+        </section>
+        <img class="lace" src="images/lace.webp" alt="" />
       </div>
-    </section>
-
-    <!-- МЕСТО: лента -->
-    <div class="lace"></div>
-    <section id="projects">
-      <div class="wrap">
-        <h2 class="rv">Selected projects</h2>
-        <p class="sub rv">
-          A selection of things I have planned, designed and built.
-        </p>
-        <div class="g2" id="projgrid"></div>
-        <!-- МЕСТО: кот справа (проекты) -->
-        <div
-          class="deco float"
-          style="
-            right: -30px;
-            top: 30px;
-            width: 200px;
-            height: 242px;
-            rotate: 18deg;
-          "
-        >
-          <!-- <img src="assets/cat.png" alt=""> -->
-        </div>
-      </div>
-    </section>
-
-    <!-- МЕСТО: лента -->
-    <div class="lace"></div>
-    <section id="contact">
-      <div class="wrap">
-        <div class="card end rv" style="transform: none">
-          <h2>Have a project in mind?</h2>
-          <p class="sub" style="margin-bottom: 0">
-            Interested in collaboration, new ideas or an opportunity to learn
-            and grow.
+      <section id="projects">
+        <div class="wrap">
+          <h2 class="g">Selected projects</h2>
+          <p class="sub in">
+            A selection of things I have planned, designed and built.
           </p>
-          <button class="mail" id="mail">
-            <svg class="ic"><use href="#i-mail" /></svg
-            ><span>LET’S CONNECT</span>
-          </button>
-          <div class="lbl" style="font-size: 9px">
-            ZHANNA SLIEPNOVA &nbsp;·&nbsp; PORTFOLIO 2026
-          </div>
-          <!-- МЕСТО: вишни слева сверху -->
-          <div
-            class="deco float"
-            style="
-              left: -38px;
-              top: -76px;
-              width: 299px;
-              height: 257px;
-              rotate: 11deg;
-            "
-          >
-            <!-- <img src="assets/cherry.png" alt=""> -->
-          </div>
-          <!-- МЕСТО: бантик справа внизу -->
-          <div
-            class="deco float"
-            style="
-              right: -20px;
-              bottom: -22px;
-              width: 260px;
-              height: 228px;
-              rotate: 15deg;
-              animation-delay: -1.5s;
-            "
-          >
-            <!-- <img src="assets/bow.png" alt=""> -->
+          <div class="grid2">
+            <article class="card pj">
+              <div class="ph">
+                <svg class="ic big"><use href="#i-code" /></svg>
+                <div>
+                  <small>PROJECT / 01</small>
+                  <h3 class="g">KODEBUA</h3>
+                </div>
+              </div>
+              <p>
+                A digital service concept that connects young programmers with
+                affordable programming help. Includes helper profiles, easy
+                session booking and Kodebot, a built-in assistant that answers
+                quick questions. The interface was prototyped in Figma and built
+                with HTML, CSS and JavaScript.
+              </p>
+              <div class="chips">
+                <span>HTML</span><span>CSS</span><span>JavaScript</span
+                ><span>Figma</span>
+              </div>
+              <div class="acts">
+                <a class="btn sm" href="#" target="_blank" rel="noopener"
+                  >Open ↗</a
+                ><a class="btn sm ghost" href="#" target="_blank" rel="noopener"
+                  ><svg class="gh"><use href="#i-gh" /></svg> GitHub</a
+                >
+              </div>
+            </article>
+            <article class="card pj">
+              <img class="d cat2" src="images/cat.png" alt="" />
+              <div class="ph">
+                <svg class="ic big"><use href="#i-game" /></svg>
+                <div>
+                  <small>PROJECT / 02</small>
+                  <h3 class="g">NORDLYSJEGER</h3>
+                </div>
+              </div>
+              <p>
+                A Pygame arcade project: collect aurora particles, avoid falling
+                ice crystals and build your score. The game focuses on fast
+                reactions, simple controls and a calm northern-lights
+                atmosphere, and it is written in Python.
+              </p>
+              <div class="chips"><span>Python</span><span>Pygame</span></div>
+              <div class="acts">
+                <a class="btn sm" href="#" target="_blank" rel="noopener"
+                  >Open ↗</a
+                ><a class="btn sm ghost" href="#" target="_blank" rel="noopener"
+                  ><svg class="gh"><use href="#i-gh" /></svg> GitHub</a
+                >
+              </div>
+            </article>
+            <article class="card pj">
+              <div class="ph">
+                <svg class="ic big"><use href="#i-sparkle" /></svg>
+                <div>
+                  <small>PROJECT / 03</small>
+                  <h3 class="g">EKTE ELLER KI?</h3>
+                </div>
+              </div>
+              <p>
+                A podcast and awareness website about AI, school, social media
+                and the future of work. It presents episodes and topics in a
+                clear structure and encourages visitors to question what is real
+                and what is generated.
+              </p>
+              <div class="chips">
+                <span>HTML</span><span>CSS</span><span>JavaScript</span>
+              </div>
+              <div class="acts">
+                <a class="btn sm" href="#" target="_blank" rel="noopener"
+                  >Open ↗</a
+                ><a class="btn sm ghost" href="#" target="_blank" rel="noopener"
+                  ><svg class="gh"><use href="#i-gh" /></svg> GitHub</a
+                >
+              </div>
+            </article>
+            <article class="card pj">
+              <div class="ph">
+                <svg class="ic big"><use href="#i-design" /></svg>
+                <div>
+                  <small>PROJECT / 04</small>
+                  <h3 class="g">BADMINTON BREAK</h3>
+                </div>
+              </div>
+              <p>
+                A school event website presenting a badminton activity, schedule
+                and participation information. Designed to be clear and quick to
+                read, with a simple layout that works for both students and
+                organisers.
+              </p>
+              <div class="chips">
+                <span>HTML</span><span>CSS</span><span>Figma</span>
+              </div>
+              <div class="acts">
+                <a class="btn sm" href="#" target="_blank" rel="noopener"
+                  >Open ↗</a
+                ><a class="btn sm ghost" href="#" target="_blank" rel="noopener"
+                  ><svg class="gh"><use href="#i-gh" /></svg> GitHub</a
+                >
+              </div>
+            </article>
           </div>
         </div>
-      </div>
-    </section>
-    <div class="lace"></div>
-    <div class="toast" id="toast"></div>
-
+      </section>
+      <img class="lace" src="images/lace.webp" alt="" />
+      <section id="contact">
+        <div class="wrap">
+          <div class="ft">
+            <div class="fin">
+              <h2 class="g">Have a project in mind?</h2>
+              <p class="sub in">
+                Interested in collaboration, new ideas or an opportunity to
+                learn and grow.
+              </p>
+              <a class="btn mail" href="#"
+                ><svg class="ic"><use href="#i-mail" /></svg> LET'S CONNECT</a
+              ><small>ZHANNA SLIEPNOVA · PORTFOLIO 2026</small>
+            </div>
+            <img class="d cherry2" src="images/cherry.png" alt="" /><img
+              class="d bow2"
+              src="images/bow.png"
+              alt=""
+            />
+          </div>
+        </div>
+      </section>
+    </main>
     <script src="script.js"></script>
   </body>
 </html>
