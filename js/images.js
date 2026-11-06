@@ -6,7 +6,7 @@ const IMG = {
   "about.webp": "images/about.webp",
   "swirl.png": "images/swirl.png",
   "cat.png": "images/cat.png",
-  "lace.webp": "images/lace.webp"
+  "lace.webp": "images/lace.webp",
 };
 document.querySelectorAll("img[data-i]").forEach((img) => {
   const path = IMG[img.dataset.i];

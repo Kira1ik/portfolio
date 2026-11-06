@@ -187,7 +187,146 @@
     "LET'S CONNECT": "TA KONTAKT",
   };
 
-Object.assign(I18N,{"HOME": "HJEM", "ABOUT ME": "OM MEG", "SKILLS": "FERDIGHETER", "PROJECTS": "PROSJEKTER", "AMBITIONS": "AMBISJONER", "APPLICATION & CV": "SØKNAD OG CV", "Who I am, where I study and what I care about.": "Hvem jeg er, hvor jeg studerer og hva jeg brenner for.", "OPEN →": "ÅPNE →", "SKILLS & LEVELS": "FERDIGHETER OG NIVÅ", "Tools, technologies, skill levels and languages.": "Verktøy, teknologier, ferdighetsnivå og språk.", "Four projects, from first sketch to working product.": "Fire prosjekter, fra første skisse til fungerende produkt.", "Where I am heading as a full-stack developer.": "Hvor jeg er på vei som fullstack-utvikler.", "My application letter and CV, ready to read.": "Søknaden og CV-en min, klare til å leses.", "GITHUB": "GITHUB", "All my code lives in public repositories.": "All koden min ligger i åpne repositorier.", "OPEN ↗": "ÅPNE ↗", "Explore the portfolio.": "Utforsk portfolioen.", "Six ways in — pick the page that matches what you want to know.": "Seks innganger — velg siden som passer det du vil vite.", "WEB DEVELOPMENT": "WEBUTVIKLING", "Building responsive websites and watching a layout come alive in the browser.": "Bygge responsive nettsider og se et oppsett våkne til liv i nettleseren.", "GAME PROJECTS": "SPILLPROSJEKTER", "Small arcade games with simple rules, fast reactions and a calm atmosphere.": "Små arkadespill med enkle regler, raske reaksjoner og rolig stemning.", "INTERFACE DESIGN": "GRENSESNITTDESIGN", "Sketching screens and flows in Figma before writing a single line of code.": "Skissere skjermer og flyt i Figma før jeg skriver én linje kode.", "AI & DIGITAL AWARENESS": "KI OG DIGITAL BEVISSTHET", "Using AI tools wisely and asking what is real and what is generated.": "Bruke KI-verktøy med omtanke og spørre hva som er ekte og hva som er generert.", "AI tools": "KI-verktøy", "Critical thinking": "Kritisk tenkning", "LEARNING PYTHON": "LÆRE PYTHON", "Working through Python step by step with small practice files.": "Jobbe meg gjennom Python steg for steg med små øvingsfiler.", "Practice": "Øving", "PROBLEM-SOLVING": "PROBLEMLØSNING", "Breaking a big problem into small steps and finding a clean solution.": "Dele opp et stort problem i små steg og finne en ryddig løsning.", "Logic": "Logikk", "Debugging": "Feilsøking", "CURIOUS & EAGER TO LEARN": "NYSGJERRIG OG LÆREVILLIG", "I pick up new tools quickly and enjoy figuring things out.": "Jeg lærer nye verktøy raskt og liker å finne ut av ting.", "STRUCTURED & INDEPENDENT": "STRUKTURERT OG SELVSTENDIG", "I plan my work, break it into steps and finish what I start.": "Jeg planlegger arbeidet, deler det i steg og fullfører det jeg begynner på.", "SOLUTION-ORIENTED": "LØSNINGSORIENTERT", "When something breaks I look for the cause and a fix, not someone to blame.": "Når noe ikke virker, leter jeg etter årsak og løsning.", "CAREFUL DOCUMENTATION": "NØYAKTIG DOKUMENTASJON", "I write down decisions, tests and progress so others can follow my work.": "Jeg skriver ned valg, tester og fremdrift slik at andre kan følge arbeidet mitt.", "CREATIVE & FULL OF IDEAS": "KREATIV OG IDÉRIK", "I like turning a first sketch into something memorable.": "Jeg liker å gjøre en første skisse om til noe minneverdig.", "GOOD COLLABORATOR": "GOD SAMARBEIDSPARTNER", "I share ideas openly, listen to others and enjoy building together.": "Jeg deler ideer åpent, lytter til andre og liker å bygge sammen.", "Interests": "Interesser", "What I like to spend my time on — in and outside of school.": "Det jeg liker å bruke tiden på — på skolen og ellers.", "Strengths": "Styrker", "The qualities I bring to every project and every team.": "Egenskapene jeg tar med meg inn i hvert prosjekt og hvert team.", "Solid": "Solid", "Good": "God", "Skill levels": "Ferdighetsnivå", "An honest overview of where I am today.": "En ærlig oversikt over hvor jeg er i dag.", "Ambitions & what drives me": "Ambisjoner og det som driver meg", "NOW · 2026–2028": "NÅ · 2026–2028", "Studying IT and media production (IM1) at Hamar Katedralskole and building a solid base in web development and Python.": "Studerer informasjonsteknologi og medieproduksjon (IM1) ved Hamar katedralskole og bygger et solid grunnlag i webutvikling og Python.", "NEXT": "NESTE STEG", "Getting work experience, working in a team on real projects and learning how professional developers work.": "Få arbeidserfaring, jobbe i team på ekte prosjekter og lære hvordan profesjonelle utviklere jobber.", "Teamwork": "Samarbeid", "Real projects": "Ekte prosjekter", "GOAL": "MÅL", "Becoming a full-stack developer who builds useful digital products people enjoy using.": "Bli en fullstack-utvikler som bygger nyttige digitale produkter folk liker å bruke.", "Useful products": "Nyttige produkter", "My road ahead": "Veien videre", "Three steps from where I am today to where I want to be.": "Tre steg fra der jeg er i dag til dit jeg vil.", "Application letter": "Søknad", "Written for a junior developer position or work placement.": "Skrevet for en stilling eller praksisplass som junior utvikler.", "Dear hiring manager,": "Til rette vedkommende,", "I am Zhanna Sliepnova, a first-year student of Information Technology and Media Production (IM1) at Hamar Katedralskole. I am applying for a junior developer position or work placement where I can keep growing as a full-stack developer.": "Jeg heter Zhanna Sliepnova og går første år på informasjonsteknologi og medieproduksjon (IM1) ved Hamar katedralskole. Jeg søker en stilling eller praksisplass som junior utvikler, der jeg kan vokse videre som fullstack-utvikler.", "In 2026 I have planned, designed and built four projects: the service concept Kodebua, prototyped in Figma, the Python arcade game Nordlysjeger, the podcast website “Ekte eller KI?” and the event website Badminton Break. I work with HTML, CSS, JavaScript, Python, Git and Figma, and I document my process carefully.": "I 2026 har jeg planlagt, designet og bygget fire prosjekter: tjenestekonseptet Kodebua prototypet i Figma, arkadespillet Nordlysjeger i Python, podkastsiden «Ekte eller KI?» og arrangementssiden Badminton Break. Jeg jobber med HTML, CSS, JavaScript, Python, Git og Figma, og dokumenterer prosessen min nøye.", "I am curious, structured and solution-oriented, I work well both independently and in a team, and I learn quickly. Russian and Ukrainian are my native languages, and I speak Norwegian and English at an intermediate level.": "Jeg er nysgjerrig, strukturert og løsningsorientert, jeg jobber godt både selvstendig og i team, og jeg lærer raskt. Jeg har russisk og ukrainsk som morsmål, og middels norsk og engelsk.", "My portfolio, CV and code are available on this site and on GitHub. I would be glad to tell you more in an interview.": "Portfolioen, CV-en og koden min finner du på denne siden og på GitHub. Jeg forteller gjerne mer på et intervju.", "Kind regards,": "Med vennlig hilsen,", "Curriculum vitae": "CV", "Zhanna Sliepnova · Junior Fullstack Developer · Hamar, Norway": "Zhanna Sliepnova · Junior fullstack-utvikler · Hamar, Norge", "Curious and structured developer interested in web development, programming and interface design. I enjoy taking an idea from the first sketch to a working digital product, and I like solving problems, learning new technologies and documenting my work. Looking for opportunities to grow as a full-stack developer through practice, collaboration and real projects.": "Nysgjerrig og strukturert utvikler med interesse for webutvikling, programmering og grensesnittdesign. Jeg liker å ta en idé fra første skisse til et fungerende digitalt produkt, og trives med å løse problemer, lære nye teknologier og dokumentere arbeidet mitt. Søker muligheter for å vokse som fullstack-utvikler gjennom praksis, samarbeid og ekte prosjekter.", "PROFILE": "PROFIL", "Information Technology and Media Production (IM1) · Hamar Katedralskole": "Informasjonsteknologi og medieproduksjon (IM1) · Hamar katedralskole", "Upper secondary education focused on programming, web development, media production and digital design.": "Videregående opplæring med fokus på programmering, webutvikling, medieproduksjon og digital design.", "Lower secondary school · Brummundall": "Ungdomsskole · Brummundall", "Completed compulsory education.": "Fullført grunnskole.", "EDUCATION": "UTDANNING", "PROJECTS · 2026": "PROSJEKTER · 2026", "Responsive design": "Responsivt design", "Prototyping": "Prototyping", "Documentation": "Dokumentasjon", "TECHNICAL SKILLS & TOOLS": "TEKNISKE FERDIGHETER OG VERKTØY", "Russian / Ukrainian": "Russisk / Ukrainsk", "Native": "Morsmål", "Norwegian / English": "Norsk / Engelsk", "Intermediate": "Middels", "LANGUAGES": "SPRÅK", "Curious & eager to learn": "Nysgjerrig og lærevillig", "Structured & independent": "Strukturert og selvstendig", "Solution-oriented": "Løsningsorientert", "Careful with documentation": "Nøyaktig med dokumentasjon", "Creative": "Kreativ og idérik", "Good collaborator": "God til å samarbeide", "PERSONAL QUALITIES": "PERSONLIGE EGENSKAPER", "EMAIL ME": "SEND E-POST", "DOWNLOAD CV (PDF) ↗": "LAST NED CV (PDF) ↗"});
+  Object.assign(I18N, {
+    HOME: "HJEM",
+    "ABOUT ME": "OM MEG",
+    SKILLS: "FERDIGHETER",
+    PROJECTS: "PROSJEKTER",
+    AMBITIONS: "AMBISJONER",
+    "APPLICATION & CV": "SØKNAD OG CV",
+    "Who I am, where I study and what I care about.":
+      "Hvem jeg er, hvor jeg studerer og hva jeg brenner for.",
+    "OPEN →": "ÅPNE →",
+    "SKILLS & LEVELS": "FERDIGHETER OG NIVÅ",
+    "Tools, technologies, skill levels and languages.":
+      "Verktøy, teknologier, ferdighetsnivå og språk.",
+    "Four projects, from first sketch to working product.":
+      "Fire prosjekter, fra første skisse til fungerende produkt.",
+    "Where I am heading as a full-stack developer.":
+      "Hvor jeg er på vei som fullstack-utvikler.",
+    "My application letter and CV, ready to read.":
+      "Søknaden og CV-en min, klare til å leses.",
+    GITHUB: "GITHUB",
+    "All my code lives in public repositories.":
+      "All koden min ligger i åpne repositorier.",
+    "OPEN ↗": "ÅPNE ↗",
+    "Explore the portfolio.": "Utforsk portfolioen.",
+    "Six ways in — pick the page that matches what you want to know.":
+      "Seks innganger — velg siden som passer det du vil vite.",
+    "WEB DEVELOPMENT": "WEBUTVIKLING",
+    "Building responsive websites and watching a layout come alive in the browser.":
+      "Bygge responsive nettsider og se et oppsett våkne til liv i nettleseren.",
+    "GAME PROJECTS": "SPILLPROSJEKTER",
+    "Small arcade games with simple rules, fast reactions and a calm atmosphere.":
+      "Små arkadespill med enkle regler, raske reaksjoner og rolig stemning.",
+    "INTERFACE DESIGN": "GRENSESNITTDESIGN",
+    "Sketching screens and flows in Figma before writing a single line of code.":
+      "Skissere skjermer og flyt i Figma før jeg skriver én linje kode.",
+    "AI & DIGITAL AWARENESS": "KI OG DIGITAL BEVISSTHET",
+    "Using AI tools wisely and asking what is real and what is generated.":
+      "Bruke KI-verktøy med omtanke og spørre hva som er ekte og hva som er generert.",
+    "AI tools": "KI-verktøy",
+    "Critical thinking": "Kritisk tenkning",
+    "LEARNING PYTHON": "LÆRE PYTHON",
+    "Working through Python step by step with small practice files.":
+      "Jobbe meg gjennom Python steg for steg med små øvingsfiler.",
+    Practice: "Øving",
+    "PROBLEM-SOLVING": "PROBLEMLØSNING",
+    "Breaking a big problem into small steps and finding a clean solution.":
+      "Dele opp et stort problem i små steg og finne en ryddig løsning.",
+    Logic: "Logikk",
+    Debugging: "Feilsøking",
+    "CURIOUS & EAGER TO LEARN": "NYSGJERRIG OG LÆREVILLIG",
+    "I pick up new tools quickly and enjoy figuring things out.":
+      "Jeg lærer nye verktøy raskt og liker å finne ut av ting.",
+    "STRUCTURED & INDEPENDENT": "STRUKTURERT OG SELVSTENDIG",
+    "I plan my work, break it into steps and finish what I start.":
+      "Jeg planlegger arbeidet, deler det i steg og fullfører det jeg begynner på.",
+    "SOLUTION-ORIENTED": "LØSNINGSORIENTERT",
+    "When something breaks I look for the cause and a fix, not someone to blame.":
+      "Når noe ikke virker, leter jeg etter årsak og løsning.",
+    "CAREFUL DOCUMENTATION": "NØYAKTIG DOKUMENTASJON",
+    "I write down decisions, tests and progress so others can follow my work.":
+      "Jeg skriver ned valg, tester og fremdrift slik at andre kan følge arbeidet mitt.",
+    "CREATIVE & FULL OF IDEAS": "KREATIV OG IDÉRIK",
+    "I like turning a first sketch into something memorable.":
+      "Jeg liker å gjøre en første skisse om til noe minneverdig.",
+    "GOOD COLLABORATOR": "GOD SAMARBEIDSPARTNER",
+    "I share ideas openly, listen to others and enjoy building together.":
+      "Jeg deler ideer åpent, lytter til andre og liker å bygge sammen.",
+    Interests: "Interesser",
+    "What I like to spend my time on — in and outside of school.":
+      "Det jeg liker å bruke tiden på — på skolen og ellers.",
+    Strengths: "Styrker",
+    "The qualities I bring to every project and every team.":
+      "Egenskapene jeg tar med meg inn i hvert prosjekt og hvert team.",
+    Solid: "Solid",
+    Good: "God",
+    "Skill levels": "Ferdighetsnivå",
+    "An honest overview of where I am today.":
+      "En ærlig oversikt over hvor jeg er i dag.",
+    "Ambitions & what drives me": "Ambisjoner og det som driver meg",
+    "NOW · 2026–2028": "NÅ · 2026–2028",
+    "Studying IT and media production (IM1) at Hamar Katedralskole and building a solid base in web development and Python.":
+      "Studerer informasjonsteknologi og medieproduksjon (IM1) ved Hamar katedralskole og bygger et solid grunnlag i webutvikling og Python.",
+    NEXT: "NESTE STEG",
+    "Getting work experience, working in a team on real projects and learning how professional developers work.":
+      "Få arbeidserfaring, jobbe i team på ekte prosjekter og lære hvordan profesjonelle utviklere jobber.",
+    Teamwork: "Samarbeid",
+    "Real projects": "Ekte prosjekter",
+    GOAL: "MÅL",
+    "Becoming a full-stack developer who builds useful digital products people enjoy using.":
+      "Bli en fullstack-utvikler som bygger nyttige digitale produkter folk liker å bruke.",
+    "Useful products": "Nyttige produkter",
+    "My road ahead": "Veien videre",
+    "Three steps from where I am today to where I want to be.":
+      "Tre steg fra der jeg er i dag til dit jeg vil.",
+    "Application letter": "Søknad",
+    "Written for a junior developer position or work placement.":
+      "Skrevet for en stilling eller praksisplass som junior utvikler.",
+    "Dear hiring manager,": "Til rette vedkommende,",
+    "I am Zhanna Sliepnova, a first-year student of Information Technology and Media Production (IM1) at Hamar Katedralskole. I am applying for a junior developer position or work placement where I can keep growing as a full-stack developer.":
+      "Jeg heter Zhanna Sliepnova og går første år på informasjonsteknologi og medieproduksjon (IM1) ved Hamar katedralskole. Jeg søker en stilling eller praksisplass som junior utvikler, der jeg kan vokse videre som fullstack-utvikler.",
+    "In 2026 I have planned, designed and built four projects: the service concept Kodebua, prototyped in Figma, the Python arcade game Nordlysjeger, the podcast website “Ekte eller KI?” and the event website Badminton Break. I work with HTML, CSS, JavaScript, Python, Git and Figma, and I document my process carefully.":
+      "I 2026 har jeg planlagt, designet og bygget fire prosjekter: tjenestekonseptet Kodebua prototypet i Figma, arkadespillet Nordlysjeger i Python, podkastsiden «Ekte eller KI?» og arrangementssiden Badminton Break. Jeg jobber med HTML, CSS, JavaScript, Python, Git og Figma, og dokumenterer prosessen min nøye.",
+    "I am curious, structured and solution-oriented, I work well both independently and in a team, and I learn quickly. Russian and Ukrainian are my native languages, and I speak Norwegian and English at an intermediate level.":
+      "Jeg er nysgjerrig, strukturert og løsningsorientert, jeg jobber godt både selvstendig og i team, og jeg lærer raskt. Jeg har russisk og ukrainsk som morsmål, og middels norsk og engelsk.",
+    "My portfolio, CV and code are available on this site and on GitHub. I would be glad to tell you more in an interview.":
+      "Portfolioen, CV-en og koden min finner du på denne siden og på GitHub. Jeg forteller gjerne mer på et intervju.",
+    "Kind regards,": "Med vennlig hilsen,",
+    "Curriculum vitae": "CV",
+    "Zhanna Sliepnova · Junior Fullstack Developer · Hamar, Norway":
+      "Zhanna Sliepnova · Junior fullstack-utvikler · Hamar, Norge",
+    "Curious and structured developer interested in web development, programming and interface design. I enjoy taking an idea from the first sketch to a working digital product, and I like solving problems, learning new technologies and documenting my work. Looking for opportunities to grow as a full-stack developer through practice, collaboration and real projects.":
+      "Nysgjerrig og strukturert utvikler med interesse for webutvikling, programmering og grensesnittdesign. Jeg liker å ta en idé fra første skisse til et fungerende digitalt produkt, og trives med å løse problemer, lære nye teknologier og dokumentere arbeidet mitt. Søker muligheter for å vokse som fullstack-utvikler gjennom praksis, samarbeid og ekte prosjekter.",
+    PROFILE: "PROFIL",
+    "Information Technology and Media Production (IM1) · Hamar Katedralskole":
+      "Informasjonsteknologi og medieproduksjon (IM1) · Hamar katedralskole",
+    "Upper secondary education focused on programming, web development, media production and digital design.":
+      "Videregående opplæring med fokus på programmering, webutvikling, medieproduksjon og digital design.",
+    "Lower secondary school · Brummundall": "Ungdomsskole · Brummundall",
+    "Completed compulsory education.": "Fullført grunnskole.",
+    EDUCATION: "UTDANNING",
+    "PROJECTS · 2026": "PROSJEKTER · 2026",
+    "Responsive design": "Responsivt design",
+    Prototyping: "Prototyping",
+    Documentation: "Dokumentasjon",
+    "TECHNICAL SKILLS & TOOLS": "TEKNISKE FERDIGHETER OG VERKTØY",
+    "Russian / Ukrainian": "Russisk / Ukrainsk",
+    Native: "Morsmål",
+    "Norwegian / English": "Norsk / Engelsk",
+    Intermediate: "Middels",
+    LANGUAGES: "SPRÅK",
+    "Curious & eager to learn": "Nysgjerrig og lærevillig",
+    "Structured & independent": "Strukturert og selvstendig",
+    "Solution-oriented": "Løsningsorientert",
+    "Careful with documentation": "Nøyaktig med dokumentasjon",
+    Creative: "Kreativ og idérik",
+    "Good collaborator": "God til å samarbeide",
+    "PERSONAL QUALITIES": "PERSONLIGE EGENSKAPER",
+    "EMAIL ME": "SEND E-POST",
+    "DOWNLOAD CV (PDF) ↗": "LAST NED CV (PDF) ↗",
+  });
   const normalize = (s) => s.replace(/\s+/g, " ").trim();
 
   const originals = new Map();
@@ -255,8 +394,7 @@ Object.assign(I18N,{"HOME": "HJEM", "ABOUT ME": "OM MEG", "SKILLS": "FERDIGHETER
 
     try {
       localStorage.setItem("zhanna-lang", lang);
-    } catch {
-    }
+    } catch {}
   };
 
   const pill = $(".pill");
@@ -353,7 +491,6 @@ Object.assign(I18N,{"HOME": "HJEM", "ABOUT ME": "OM MEG", "SKILLS": "FERDIGHETER
   document.addEventListener("keydown", (e) => {
     if (e.key === "Escape") setNav(false);
   });
-
 
   if (!reduced) {
     const revealTargets = $$(
@@ -469,7 +606,10 @@ Object.assign(I18N,{"HOME": "HJEM", "ABOUT ME": "OM MEG", "SKILLS": "FERDIGHETER
     render();
   });
 
-  window.__relayout = () => { measure(); render(); };
+  window.__relayout = () => {
+    measure();
+    render();
+  };
   measure();
   render();
 
