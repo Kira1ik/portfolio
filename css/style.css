@@ -919,7 +919,7 @@ h1 span {
 .fin {
   box-shadow: var(--sh-inset-img);
 }
-/ .ph {
+.ph {
   box-shadow:
     var(--sh-sm),
     inset 0 1px 0 rgba(212, 191, 227, 0.07);
